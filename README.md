@@ -1,17 +1,19 @@
-# nvim-config
+# Neovim config
 
-my nvim config
+My Neovim configuration and others.
 
-## requirements
+[fork from enriquesaid](https://github.com/enriquesaid/nvim-config)
 
-* [nvim 0.5+](https://neovim.io/) 🤪
+## 1. MacOS Installations
+
+* [nvim](https://neovim.io/)
+```bash
+brew install neovim
+```
 * [paq-nvim](https://github.com/savq/paq-nvim)
+* [dracula](https://github.com/dracula/vim) color scheme
 
-## color scheme
-
-* [dracula](https://github.com/dracula/vim)
-
-## install
+## 2. Neovim Installations
 
 ```vim
 :PaqInstall
@@ -29,5 +31,4 @@ my nvim config
 :TSInstall html
 :TSInstall css
 :TSInstall yaml
-:TSInstall dart
 ```

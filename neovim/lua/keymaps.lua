@@ -1,4 +1,4 @@
--- 
+--    
 -- After update, execute: :source $MYVIMRC<CR>
 -- to reload without close vim
 -- 
@@ -7,9 +7,13 @@ local ns = { noremap = true, silent = true }
 
 -- Command
 set("n", ";", ":", { noremap = true })
-set("n", " h", "0", { noremap = true })
-set("n", " l", "$",  { noremap = true })
-set("i", "<Leader><Space>", "<Esc>",  { noremap = true })
+set("n", " h", "0", { noremap = true })     -- Begin of line
+set("n", " l", "$",  { noremap = true })    -- End of line
+set("i", "<Leader><Space>", "<Esc>",  { noremap = true })   -- Back to normal mode
+set("n", "<Space>j", "<C-f>",  { noremap = true })          -- Page down 
+set("n", "<Space>k", "<C-b>",  { noremap = true })          -- Page up  
+set("n", "<C-s>", ":w<CR>", ns)                                 -- Save  
+
 
 
 -- Terminal
@@ -41,8 +45,9 @@ set("n", "<C-n>", ":NvimTreeToggle<CR>", ns)
 set("n", "<Leader>n", ":NvimTreeFindFile<CR>", ns)
 
 -- Telescope
-set("n", "<Leader><Leader>", ":Telescope find_files<CR>", ns)
-set("n", "<C-p>", ":Telescope buffers<CR>", ns)
+set("n", "<Leader><Leader>f", ":Telescope find_files<CR>", ns)
+set("n", "<Leader><Leader>g", ":Telescope live_grep<CR>", ns)
+set("n", "<Leader><Leader>b", ":Telescope buffers<CR>", ns)
 
 -- Commentary
 set("n", "<Leader>cc", ":Commentary<CR>", ns)

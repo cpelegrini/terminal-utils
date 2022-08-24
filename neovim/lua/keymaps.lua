@@ -9,6 +9,7 @@ local ns = { noremap = true, silent = true }
 set("n", ";", ":", { noremap = true })
 set("n", " h", "0", { noremap = true })
 set("n", " l", "$",  { noremap = true })
+set("i", "<Leader><Space>", "<Esc>",  { noremap = true })
 
 
 -- Terminal

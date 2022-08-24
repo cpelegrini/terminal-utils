@@ -1,6 +1,12 @@
 # Neovim config
 
-My Neovim configuration and others.
+My vim (neovim) guide for everything.
+
+## Vim guides
+* [QuickRef](https://quickref.me/vim?q=s)
+* [DevHints](https://devhints.io/vim)
+
+
 
 [fork from enriquesaid](https://github.com/enriquesaid/nvim-config)
 
@@ -12,15 +18,19 @@ brew install neovim
 ```
 * [paq-nvim](https://github.com/savq/paq-nvim)
 * [dracula](https://github.com/dracula/vim) color scheme
+* [devicons](https://github.com/ryanoasis/vim-devicons)
 
+### Others neovim guides
+* [fanwangecon](https://fanwangecon.github.io/Tex4Econ/nontex/install/linux/fn_vim.html)
+* [book portuguese](https://juliobiason.gitbooks.io/uma-licao-de-vim/content/index.html)
 
 ## Clone repository
-Create nvim config folder
+* Create nvim config folder
 ```bash
 mkdir ~/.config/nvim
 cd ~/.config/nvim
 ```
-Clone repository
+* Clone repository
 ```github
 git clone https://github.com/cpelegrini/neovim.git .
 ```
@@ -55,7 +65,15 @@ git clone https://github.com/cpelegrini/neovim.git .
 |:e file|open a file|
 |:close|close window|
 |:only|close all other windows|
+|ctrl + w + w|alternate focus between windows|
 
+
+### nvim-tree mappings
+To see help, type:
+```vim
+:help nvim-tree-default-mappings
+```
+[link](https://github.com/kyazdani42/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt)
 
 ## Sessions
 Save session to restore after restart nvim

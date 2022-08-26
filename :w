@@ -1,27 +1,27 @@
---
+--    
 -- After update, execute: :source $MYVIMRC<CR>
 -- to reload without close vim
---
+-- 
 local set = vim.api.nvim_set_keymap
 local ns = { noremap = true, silent = true }
 
 -- Command
 set("n", ";", ":", { noremap = true })
-set("n", "<C-s>", ":w<CR>", ns) -- Save
-set("i", "<Leader><Space>", "<Esc>", { noremap = true }) -- Back to normal mode
-set("n", "<Space>h", "0", { noremap = true }) -- Begin of line
-set("n", "<Space>l", "$", { noremap = true }) -- End of line
-set("n", "<Space>j", "<C-f>", { noremap = true }) -- Page down
-set("n", "<Space>k", "<C-b>", { noremap = true }) -- Page up
-set("n", "<Space>u", ":m-2<CR>", ns) -- Move line up
-set("n", "<Space>d", ":m+1<CR>", ns) -- Move line down
+set("n", " h", "0", { noremap = true })     -- Begin of line
+set("n", " l", "$",  { noremap = true })    -- End of line
+set("i", "<Leader><Space>", "<Esc>",  { noremap = true })   -- Back to normal mode
+set("n", "<Space>j", "<C-f>",  { noremap = true })          -- Page down 
+set("n", "<Space>k", "<C-b>",  { noremap = true })          -- Page up  
+set("n", "<C-s>", ":w<CR>", ns)                                 -- Save  
+set("n", "<m-u>", ":m-2<CR>", ns)                           -- Move line up  
+set("n", "<m-d>", ":m+2<CR>", ns)                           -- Move line down
 
 
 -- Terminal
 set("t", "<Esc>", "<C-\\><C-n><C-w><C-w>", ns)
 
 -- Clean Search
-set("n", "<Leader><Leader><Space>", ":let @/=''<CR>", ns)
+set("n", "<Leader><Space>", ":let @/=''<CR>", ns)
 
 -- Window
 set("n", "<C-j>", ":resize -2<CR>", ns)
@@ -53,3 +53,5 @@ set("n", "<Leader><Leader>b", ":Telescope buffers<CR>", ns)
 -- Commentary
 set("n", "<Leader>cc", ":Commentary<CR>", ns)
 set("v", "<Leader>cc", ":Commentary<CR>", ns)
+
+

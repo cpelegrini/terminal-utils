@@ -12,6 +12,10 @@ require('paq') {
   'akinsho/bufferline.nvim';
   'Yggdroot/indentLine';
   'nvim-treesitter/nvim-treesitter';
+  'francoiscabrol/ranger.vim';
+  'rbgrouleff/bclose.vim';
+  'voldikss/vim-floaterm';
+  'nvim-telescope/telescope-file-browser.nvim';
 
   -- LSP
   'neovim/nvim-lspconfig';
@@ -21,6 +25,9 @@ require('paq') {
   'hrsh7th/cmp-path';
   'hrsh7th/cmp-buffer';
   'saadparwaiz1/cmp_luasnip';
+
+  -- Languages
+  'sheerun/vim-polyglot';
 
   -- Snipets
   'L3MON4D3/LuaSnip';
@@ -48,5 +55,12 @@ require('paq') {
   -- Dart/Flutter
   'dart-lang/dart-vim-plugin';
   'akinsho/flutter-tools.nvim';
+
+  -- Debugger
+  -- 'mfussenegger/nvim-dap';
+  -- 'rcarriga/nvim-dap-ui';
+  -- 'theHamsta/nvim-dap-virtual-text';
+  -- 'nvim-telescope/telescope-dap.nvim';
+  'puremourning/vimspector';
 }
 

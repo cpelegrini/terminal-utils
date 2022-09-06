@@ -40,6 +40,8 @@ ln -s $(pwd) ~/.config/nvim
 :LspInstall typescript
 :LspInstall html
 :LspInstall css
+:LspInstall csharp_ls
+:LspInstall dockerls
 
 :TSInstall lua
 :TSInstall javascript
@@ -48,6 +50,8 @@ ln -s $(pwd) ~/.config/nvim
 :TSInstall html
 :TSInstall css
 :TSInstall yaml
+:TSInstall c_sharp
+:TSInstall dockerfile
 ```
 
 ## Key Maps
@@ -82,4 +86,11 @@ Restore session
 Restore outside nvim
 ```bash
 nvim -S session.vim
-```
+
+
+### Debug - Vimspector
+
+Steps to debug with neovim.
+* [Repository](https://github.com/puremourning/vimspector)
+* [Article: Debugging in Vim with Vimspector](https://dev.to/iggredible/debugging-in-vim-with-vimspector-4n0m)
+

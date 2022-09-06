@@ -46,3 +46,6 @@ require("flutter-tools").setup{
   },
 }
 
+-- Chsarp
+require'lspconfig'.csharp_ls.setup{}
+

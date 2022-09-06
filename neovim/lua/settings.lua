@@ -2,6 +2,7 @@ local g = vim.g
 local opt = vim.opt
 local cmd = vim.cmd
 
+
 -- Leader
 g.mapleader = ','
 
@@ -13,7 +14,7 @@ opt.swapfile = false
 opt.hidden = true
 opt.history = 100
 opt.lazyredraw = true
-opt.synmaxcol = 240
+opt.synmaxcol = 2
 
 -- Theme
 opt.termguicolors = true
@@ -46,7 +47,7 @@ opt.whichwrap:append {
   h = true,
   l = true
 }
-
+cmd [[set conceallevel=0]]
 -- Terminal
 cmd [[command! Term :botright split term://$SHELL]]
 cmd [[
@@ -54,3 +55,10 @@ cmd [[
   autocmd TermOpen * startinsert
   autocmd BufLeave term://* stopinsert
 ]]
+
+
+-- FloatTerm
+g.floaterm_keymap_toggle = '<Leader><Leader>t'
+
+-- Vimspector
+g.vimspector_enable_mappings = 'VISUAL_STUDIO' -- 'HUMAN'

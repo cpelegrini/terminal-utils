@@ -14,4 +14,5 @@ require 'plugins.lsp-config'
 require 'plugins.cmp'
 require 'plugins.autopairs'
 require 'plugins.gitsigns'
+require 'plugins.vimspector'
 

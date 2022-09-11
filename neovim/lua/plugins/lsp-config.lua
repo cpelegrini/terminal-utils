@@ -39,13 +39,15 @@ lsp_installer.on_server_ready(
 )
 
 -- Flutter
-require("flutter-tools").setup{
-  lsp = {
-    on_attach = on_attach,
-    capabilities = capabilities
-  },
-}
+-- require("flutter-tools").setup{
+--   lsp = {
+--     on_attach = on_attach,
+--     capabilities = capabilities
+--   },
+-- }
 
 -- Chsarp
 require'lspconfig'.csharp_ls.setup{}
+
+require'lspconfig'.marksman.setup{}
 

@@ -3,8 +3,9 @@ require('paq') {
   'nvim-lua/plenary.nvim';
 
   -- Visual
-  'glepnir/dashboard-nvim';
+  -- 'glepnir/dashboard-nvim';
   'dracula/vim';
+  'wojciechkepka/vim-github-dark';
   'famiu/feline.nvim';
   'kyazdani42/nvim-web-devicons';
   'kyazdani42/nvim-tree.lua';
@@ -16,6 +17,8 @@ require('paq') {
   'rbgrouleff/bclose.vim';
   'voldikss/vim-floaterm';
   'nvim-telescope/telescope-file-browser.nvim';
+  -- 'ellisonleao/glow.nvim';
+  -- 'plasticboy/vim-markdown';
 
   -- LSP
   'neovim/nvim-lspconfig';
@@ -53,8 +56,8 @@ require('paq') {
   'elzr/vim-json';
 
   -- Dart/Flutter
-  'dart-lang/dart-vim-plugin';
-  'akinsho/flutter-tools.nvim';
+  -- 'dart-lang/dart-vim-plugin';
+  -- 'akinsho/flutter-tools.nvim';
 
   -- Debugger
   -- 'mfussenegger/nvim-dap';

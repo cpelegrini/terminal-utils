@@ -4,7 +4,7 @@ require 'keymaps'
 
 -- Plugins
 require 'plugins.paq'
-require 'plugins.dashboard'
+-- require 'plugins.dashboard'
 require 'plugins.feline'
 require 'plugins.bufferline'
 require 'plugins.tree'
@@ -15,4 +15,7 @@ require 'plugins.cmp'
 require 'plugins.autopairs'
 require 'plugins.gitsigns'
 require 'plugins.vimspector'
+-- require 'plugins.glow'
 
+-- after all Plugins
+require 'settingsend'

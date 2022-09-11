@@ -3,6 +3,7 @@
 My vim (neovim) guide for everything.
 
 ## Vim guides
+* [Neovim](https://www.lunarvim.org/configuration/01-settings.html#example-options)
 * [QuickRef](https://quickref.me/vim?q=s)
 * [DevHints](https://devhints.io/vim)
 
@@ -15,6 +16,10 @@ My vim (neovim) guide for everything.
 * [nvim](https://neovim.io/)
 ```bash
 brew install neovim
+```
+Neovim instalation folder:
+```bash
+~/.local/share/nvim
 ```
 * [paq-nvim](https://github.com/savq/paq-nvim)
 * [dracula](https://github.com/dracula/vim) color scheme
@@ -42,6 +47,7 @@ ln -s $(pwd) ~/.config/nvim
 :LspInstall css
 :LspInstall csharp_ls
 :LspInstall dockerls
+:LspInstall marksman
 
 :TSInstall lua
 :TSInstall javascript
@@ -52,6 +58,7 @@ ln -s $(pwd) ~/.config/nvim
 :TSInstall yaml
 :TSInstall c_sharp
 :TSInstall dockerfile
+:TSInstall markdown
 ```
 
 ## Key Maps

@@ -3,8 +3,9 @@ local opt = vim.opt
 local cmd = vim.cmd
 
 
--- Leader
+-- General 
 g.mapleader = ','
+g.vim_markdown_conceal = 0
 
 -- General
 opt.compatible = false
@@ -18,10 +19,13 @@ opt.synmaxcol = 2
 
 -- Theme
 opt.termguicolors = true
-cmd [[colorscheme dracula]]
+-- cmd [[colorscheme dracula]]
+cmd [[colorscheme ghdark]]
 
 -- Editor
+vim.opt.cmdheight = 2
 opt.number = true
+opt.relativenumber = true
 opt.wrap = false
 opt.signcolumn = 'yes'
 opt.showmatch = true
@@ -29,8 +33,9 @@ opt.showmode = false
 opt.foldmethod = 'marker'
 opt.splitright = true
 opt.splitbelow = true
-opt.conceallevel = 0
-opt.colorcolumn = '80'
+opt.colorcolumn = '100'
+opt.cursorcolumn = true
+--opt.ctermbg = 8
 opt.cursorline = true
 opt.scrolloff = 10
 opt.expandtab = true
@@ -47,7 +52,8 @@ opt.whichwrap:append {
   h = true,
   l = true
 }
-cmd [[set conceallevel=0]]
+cmd [[highlight ColorColumn ctermbg=4 guibg=#333333]] -- vert line color (colorcolumn)
+
 -- Terminal
 cmd [[command! Term :botright split term://$SHELL]]
 cmd [[
@@ -56,9 +62,15 @@ cmd [[
   autocmd BufLeave term://* stopinsert
 ]]
 
+cmd [[autocmd BufNewFile,BufRead *.md set filetype=markdown]]
 
 -- FloatTerm
 g.floaterm_keymap_toggle = '<Leader><Leader>t'
 
 -- Vimspector
 g.vimspector_enable_mappings = 'VISUAL_STUDIO' -- 'HUMAN'
+
+-- Polyglot
+g.polyglot_disabled = {'markdown'}
+
+

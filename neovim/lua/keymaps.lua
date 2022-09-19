@@ -7,7 +7,7 @@ local ns = { noremap = true, silent = true }
 
 -- Command
 set("n", ";", ":", { noremap = true })
-set("n", "<C-s>", ":w<CR>", ns) -- Save
+-- set("n", "<C-s>", ":w<CR>", ns) -- Save
 set("i", "<Leader><Leader>", "<Esc>", { noremap = true }) -- Back to normal mode
 set("n", "<Space>h", "0", { noremap = true }) -- Begin of line
 set("n", "<Space>l", "$", { noremap = true }) -- End of line

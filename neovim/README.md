@@ -78,6 +78,7 @@ ln -s $(pwd) ~/.config/nvim
 To see help, type:
 ```vim
 :help nvim-tree-default-mappings
+:help nvim-tree-mappings
 ```
 [link](https://github.com/kyazdani42/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt)
 

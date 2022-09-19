@@ -4,7 +4,7 @@ local cmd = vim.cmd
 
 
 -- General 
-g.mapleader = ','
+g.mapleader = '\\'
 g.vim_markdown_conceal = 0
 
 -- General
@@ -33,10 +33,11 @@ opt.showmode = false
 opt.foldmethod = 'marker'
 opt.splitright = true
 opt.splitbelow = true
-opt.colorcolumn = '100'
+opt.colorcolumn = '90'
 opt.cursorcolumn = true
---opt.ctermbg = 8
 opt.cursorline = true
+--opt.ctermbg = 8
+opt.conceallevel = 0
 opt.scrolloff = 10
 opt.expandtab = true
 opt.shiftwidth = 2
@@ -52,7 +53,10 @@ opt.whichwrap:append {
   h = true,
   l = true
 }
-cmd [[highlight ColorColumn ctermbg=4 guibg=#333333]] -- vert line color (colorcolumn)
+cmd [[
+  highlight ColorColumn guibg=#333333
+  highlight CursorLineNr guibg=#ff0000
+]] -- vert line color (colorcolumn)
 
 -- Terminal
 cmd [[command! Term :botright split term://$SHELL]]

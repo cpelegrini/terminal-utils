@@ -46,8 +46,7 @@ lsp_installer.on_server_ready(
 --   },
 -- }
 
--- Chsarp
 require'lspconfig'.csharp_ls.setup{}
-
 require'lspconfig'.marksman.setup{}
+require'lspconfig'.tsserver.setup{}
 

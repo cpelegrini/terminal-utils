@@ -18,9 +18,6 @@ opt.lazyredraw = true
 opt.synmaxcol = 2
 
 -- Theme
-opt.termguicolors = true
--- cmd [[colorscheme dracula]]
-cmd [[colorscheme ghdark]]
 
 -- Editor
 vim.opt.cmdheight = 2
@@ -34,7 +31,7 @@ opt.foldmethod = 'marker'
 opt.splitright = true
 opt.splitbelow = true
 opt.colorcolumn = '90'
-opt.cursorcolumn = true
+opt.cursorcolumn = false
 opt.cursorline = true
 --opt.ctermbg = 8
 opt.conceallevel = 0
@@ -53,11 +50,6 @@ opt.whichwrap:append {
   h = true,
   l = true
 }
-cmd [[
-  highlight ColorColumn guibg=#333333
-  highlight CursorLineNr guibg=#ff0000
-]] -- vert line color (colorcolumn)
-
 -- Terminal
 cmd [[command! Term :botright split term://$SHELL]]
 cmd [[

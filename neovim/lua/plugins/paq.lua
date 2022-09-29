@@ -6,17 +6,19 @@ require('paq') {
   -- 'glepnir/dashboard-nvim';
   'dracula/vim';
   'wojciechkepka/vim-github-dark';
+  'rafamadriz/neon';
   'famiu/feline.nvim';
   'kyazdani42/nvim-web-devicons';
   'kyazdani42/nvim-tree.lua';
   'nvim-telescope/telescope.nvim';
-  'akinsho/bufferline.nvim';
-  'Yggdroot/indentLine';
+ {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'};
   'nvim-treesitter/nvim-treesitter';
   'francoiscabrol/ranger.vim';
   'rbgrouleff/bclose.vim';
   'voldikss/vim-floaterm';
   'nvim-telescope/telescope-file-browser.nvim';
+  'vim-airline/vim-airline';
+  'vim-airline/vim-airline-themes';
   -- 'ellisonleao/glow.nvim';
   -- 'plasticboy/vim-markdown';
 
@@ -42,6 +44,9 @@ require('paq') {
   'tpope/vim-repeat';
   'pbrisbin/vim-mkdir';
   'RRethy/vim-illuminate';
+  'prettier/vim-prettier';
+  -- 'Yggdroot/indentLine';
+  'lukas-reineke/indent-blankline.nvim';
 
   -- Git
   'lewis6991/gitsigns.nvim';

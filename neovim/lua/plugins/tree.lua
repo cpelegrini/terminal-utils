@@ -1,6 +1,7 @@
 local g = vim.g
 
--- g.nvim_tree_quit_on_open = 1
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
 
 require('nvim-tree').setup{
   --auto_close = true,
@@ -9,7 +10,31 @@ require('nvim-tree').setup{
     custom = {'.git', 'node_modules', '.cache'}
   },
   view = {
-    width = 40
+    adaptive_size = true,
+  },
+  renderer = {
+    indent_width = 2,
+    indent_markers = {
+      enable = true,
+      inline_arrows = true,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        item = "│ ",
+        bottom = "─ ",
+        none = "  ",
+      },
+    }
+  },
+  diagnostics = {
+    enable = true,
+    show_on_dirs = false,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    },
   }
 }
 

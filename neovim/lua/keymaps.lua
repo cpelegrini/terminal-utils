@@ -27,10 +27,10 @@ set("t", "<Esc>", "<C-\\><C-n><C-w><C-w>", ns)
 set("n", "<Leader><Leader><Space>", ":let @/=''<CR>", ns)
 
 -- Window
--- set("n", "<C-j>", ":resize -2<CR>", ns)
--- set("n", "<C-k>", ":resize +2<CR>", ns)
--- set("n", "<C-h>", ":vertical resize -2<CR>", ns)
--- set("n", "<C-l>", ":vertical resize +2<CR>", ns)
+set("n", "<C-j>", "<C-w>j", ns)
+set("n", "<C-k>", "<C-w>k", ns)
+set("n", "<C-h>", "<C-w>h", ns)
+set("n", "<C-l>", "<C-w>l", ns)
 set("n", "<Leader>h", ":<C-u>split<CR>", ns)
 set("n", "<Leader>v", ":<C-u>vsplit<CR>", ns)
 
@@ -41,7 +41,18 @@ set("n", "k", "gk", ns)
 -- Buffers
 set("n", "<Tab>", ":BufferLineCycleNext<CR>", ns)
 set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", ns)
-set("n", "<C-d>", ":bd<CR>", ns)
+set("n", "<Leader>1", ":BufferLineGoToBuffer 1<CR>", ns)
+set("n", "<Leader>2", ":BufferLineGoToBuffer 2<CR>", ns)
+set("n", "<Leader>3", ":BufferLineGoToBuffer 3<CR>", ns)
+set("n", "<Leader>4", ":BufferLineGoToBuffer 4<CR>", ns)
+set("n", "<Leader>5", ":BufferLineGoToBuffer 5<CR>", ns)
+set("n", "<Leader>6", ":BufferLineGoToBuffer 6<CR>", ns)
+set("n", "<Leader>7", ":BufferLineGoToBuffer 7<CR>", ns)
+set("n", "<Leader>8", ":BufferLineGoToBuffer 8<CR>", ns)
+set("n", "<Leader>9", ":BufferLineGoToBuffer 9<CR>", ns)
+set("n", "<Leader>q", ":Bclose<CR>", ns)
+
+-- set("n", "<C-d>", ":bd<CR>", ns)
 set("n", "<C-t>", ":tabnew<CR>", ns)
 
 -- Nvim Tree

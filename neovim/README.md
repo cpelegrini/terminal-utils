@@ -59,6 +59,7 @@ ln -s $(pwd) ~/.config/nvim
 :TSInstall c_sharp
 :TSInstall dockerfile
 :TSInstall markdown
+:TSInstall tsx
 ```
 
 ## Key Maps
@@ -101,4 +102,13 @@ nvim -S session.vim
 Steps to debug with neovim.
 * [Repository](https://github.com/puremourning/vimspector)
 * [Article: Debugging in Vim with Vimspector](https://dev.to/iggredible/debugging-in-vim-with-vimspector-4n0m)
+
+### vim-prettier
+Run the command at vim-prettier folder:
+```bash
+cd ~/.local/share/nvim/site/plugged/vim-prettier
+yarn install --frozen-lockfile --production
+ 
+```
+
 

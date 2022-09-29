@@ -3,6 +3,7 @@ require 'settings'
 require 'keymaps'
 
 -- Plugins
+require 'plugins.colorscheme'
 require 'plugins.paq'
 -- require 'plugins.dashboard'
 require 'plugins.feline'
@@ -16,6 +17,4 @@ require 'plugins.autopairs'
 require 'plugins.gitsigns'
 require 'plugins.vimspector'
 -- require 'plugins.glow'
-
--- after all Plugins
-require 'settingsend'
+require 'plugins.indent'

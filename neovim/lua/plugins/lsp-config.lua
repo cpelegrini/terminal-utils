@@ -48,5 +48,9 @@ lsp_installer.on_server_ready(
 
 require'lspconfig'.csharp_ls.setup{}
 require'lspconfig'.marksman.setup{}
-require'lspconfig'.tsserver.setup{}
+require'lspconfig'.tsserver.setup{
+  on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  cmd = { "typescript-language-server", "--stdio" }
+}
 

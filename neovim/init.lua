@@ -1,11 +1,11 @@
--- Settings & Keys
+---- -- Settings & Keys
 require 'settings'
 require 'keymaps'
-
--- Plugins
+--
+---- Plugins
 require 'plugins.colorscheme'
 require 'plugins.paq'
--- require 'plugins.dashboard'
+---- -- require 'plugins.dashboard'
 require 'plugins.feline'
 require 'plugins.bufferline'
 require 'plugins.tree'
@@ -15,6 +15,7 @@ require 'plugins.lsp-config'
 require 'plugins.cmp'
 require 'plugins.autopairs'
 require 'plugins.gitsigns'
-require 'plugins.vimspector'
--- require 'plugins.glow'
+---- require 'plugins.vimspector'
+---- require 'plugins.glow'
 require 'plugins.indent'
+require 'plugins.toggleterm'

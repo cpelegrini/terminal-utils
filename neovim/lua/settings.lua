@@ -10,24 +10,26 @@ g.vim_markdown_conceal = 0
 -- General
 opt.compatible = false
 opt.mouse = 'a'
-opt.clipboard = 'unnamedplus'
+opt.clipboard:append { 'unnamed', 'unnamedplus' }
 opt.swapfile = false
 opt.hidden = true
 opt.history = 100
 opt.lazyredraw = true
 opt.synmaxcol = 2
 
--- Theme
 
 -- Editor
-vim.opt.cmdheight = 2
+opt.textwidth = 90  -- maximum text width to format
+opt.cmdheight = 2
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.wrap = false
 opt.signcolumn = 'yes'
 opt.showmatch = true
-opt.showmode = false
-opt.foldmethod = 'marker'
+opt.showmode = true
+opt.foldenable = true
+opt.foldmethod = 'indent'
+opt.foldlevelstart=20
 opt.splitright = true
 opt.splitbelow = true
 opt.colorcolumn = '90'
@@ -37,8 +39,8 @@ opt.cursorline = true
 opt.conceallevel = 0
 opt.scrolloff = 10
 opt.expandtab = true
-opt.shiftwidth = 2
-opt.tabstop = 2
+opt.shiftwidth = 3
+opt.tabstop = 3
 opt.smartindent = true
 opt.list = true
 opt.listchars = { eol = '¬' }

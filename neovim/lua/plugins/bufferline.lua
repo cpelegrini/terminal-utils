@@ -3,10 +3,6 @@ require("bufferline").setup{
     numbers = "ordinal",
     diagnostics = "nvim_lsp",
     show_tab_indicators = true,
-    indicator = {
-      indicator = '] ',
-      style = 'icon'
-    },
     show_buffer_close_icons = true,
     show_close_icon = false,
     enforce_regular_tabs = false,

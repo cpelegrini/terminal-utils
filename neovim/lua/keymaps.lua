@@ -1,4 +1,3 @@
---
 -- After update, execute: :source $MYVIMRC<CR>
 -- to reload without close vim
 --
@@ -17,6 +16,9 @@ set("n", "<C-S-Down>", ":m+1<CR>", ns) -- Move line down
 set("n", "<C-S-Up>", ":m-2<CR>", ns) -- Move line up
 set("i", "<C-S-Down>", "<Esc>:m+1<CR>", ns) -- Move line down
 set("i", "<C-S-Up>", "<Esc>:m-2<CR>", ns) -- Move line up
+set("i", "<F12>", "<Esc>:set invrelativenumber<CR>", ns) -- invert relative number show
+set("n", "<F12>", "<Esc>:set invrelativenumber<CR>", ns) -- invert relative number show
+
 
 -- Terminal
 set("t", "<Esc>", "<C-\\><C-n><C-w><C-w>", ns)
@@ -35,9 +37,12 @@ set("n", "<Space>m", "<C-w>w", ns) -- go to next pane
 set("n", "<Leader>h", ":<C-u>split<CR>", ns)
 set("n", "<Leader>v", ":<C-u>vsplit<CR>", ns)
 
--- Moving
-set("n", "j", "gj", ns)
-set("n", "k", "gk", ns)
+-- Moving in insert mode using mac Alt character
+set("i", "˙", "<C-o>h", ns)
+set("i", "∆", "<C-o>j", ns)
+set("i", "˚", "<C-o>k", ns)
+set("i", "¬", "<C-o>l", ns)
+
 
 -- Buffers
 set("n", "<Tab>", ":BufferLineCycleNext<CR>", ns)

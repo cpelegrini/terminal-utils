@@ -24,8 +24,14 @@ require('nightfox').setup({
 })
 
 -- cmd [[colorscheme dracula]]
--- cmd [[colorscheme ghdark]]
-cmd [[ colorscheme nightfox ]]
+-- cmd [[colorscheme nightfox]]
+-- cmd [[ colorscheme carbonfox ]]
+-- cmd [[ colorscheme tender ]]
+-- cmd [[ colorscheme murphy ]]
+-- cmd [[ colorscheme catppuccin ]]
+-- cmd [[ colorscheme paramount ]]
+-- cmd [[ colorscheme vimdark ]]
+cmd [[ colorscheme moonfly ]]
 
 -- cmd [[
 --   highlight ColorColumn guibg=#333333
@@ -35,3 +41,8 @@ cmd [[ colorscheme nightfox ]]
 
 -- selection color
 cmd [[hi Visual guibg=#4d535a]]
+
+-- Clap
+cmd [[let g:clap_theme = 'material_design_dark']]
+
+require'colorizer'.setup()

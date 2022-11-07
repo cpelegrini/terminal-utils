@@ -28,6 +28,11 @@ Neovim instalation folder:
 -  [dracula](https://github.com/dracula/vim) color scheme
 -  [devicons](https://github.com/ryanoasis/vim-devicons)
 
+### Color Schemes
+
+[vimcolorschemes](https://vimcolorschemes.com/)
+
+
 ### Others neovim guides
 
 -  [fanwangecon](https://fanwangecon.github.io/Tex4Econ/nontex/install/linux/fn_vim.html)
@@ -43,6 +48,7 @@ ln -s $(pwd) ~/.config/nvim
 ```
 
 ## 2. Neovim Installations
+* neovim plugins folder (macos): ~/.local/share/nvim/site/pack/paqs/start
 
 ```vim
 :PaqInstall

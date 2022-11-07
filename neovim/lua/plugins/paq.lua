@@ -4,9 +4,15 @@ require('paq') {
    --
    -- -- Visual
    -- -- 'glepnir/dashboard-nvim';
+   -- colorschemes
    'Mofiqul/dracula.nvim';
    'EdenEast/nightfox.nvim';
-   -- 'wojciechkepka/vim-github-dark';
+   'jacoborus/tender.vim';
+   'bluz71/vim-moonfly-colors';
+   {'catppuccin/nvim', as='catppuccin' };
+   'ldelossa/vimdark';
+   'owickstrom/vim-colors-paramount';
+   --
    'famiu/feline.nvim';
    'kyazdani42/nvim-web-devicons';
    'kyazdani42/nvim-tree.lua';
@@ -31,6 +37,10 @@ require('paq') {
    'hrsh7th/cmp-path';
    'hrsh7th/cmp-buffer';
    'saadparwaiz1/cmp_luasnip';
+   -- navigator requires
+   { 'ray-x/guihua.lua', run = 'cd lua/fzy && make' };
+   'ray-x/navigator.lua';
+   
    -- 
    -- -- Languages
    'sheerun/vim-polyglot';
@@ -48,6 +58,9 @@ require('paq') {
    'prettier/vim-prettier';
    'Yggdroot/indentLine';
    'lukas-reineke/indent-blankline.nvim';
+   'skywind3000/vim-quickui';
+    'liuchengxu/vim-clap'; -- comando após instalar: Clap install-binary
+   'norcalli/nvim-colorizer.lua';
    --
    -- -- Git
    'lewis6991/gitsigns.nvim';

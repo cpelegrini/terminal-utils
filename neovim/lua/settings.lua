@@ -58,6 +58,13 @@ cmd [[
   autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
   autocmd TermOpen * startinsert
   autocmd BufLeave term://* stopinsert
+  let g:conceallevel = 0
+  let g:indentLine_conceallevel = 0
+]]
+-- tpope/vim-markdown
+cmd [[
+  let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'typescript', 'javascript']
+  let g:markdown_syntax_conceal = 0
 ]]
 
 cmd [[autocmd BufNewFile,BufRead *.md set filetype=markdown]]
@@ -71,4 +78,8 @@ g.vimspector_enable_mappings = 'VISUAL_STUDIO' -- 'HUMAN'
 -- Polyglot
 g.polyglot_disabled = {'markdown'}
 
-
+-- Prettier enable on save
+cmd [[
+  let g:prettier#autoformat = 1
+  let g:prettier#autoformat_require_pragma = 0
+]]

@@ -13,27 +13,42 @@ endif
 
 call quickui#menu#reset()
 
-call quickui#menu#install("File", [
+call quickui#menu#install("&1. File", [
+			\ [ "Open file\t(\\\\f)", 'call feedkeys("\\\\f")'],
+			\ [ "Open grep\t(\\\\g)", 'call feedkeys("\\\\g")'],
+			\ [ "Open buffer\t(\\\\b)", 'call feedkeys("\\\\b")'],
+			\ [ "View recent files", 'browse oldfiles'],
 			\ [ "--", ],
-			\ [ "| Open file\t(\\\\f) |", 'call feedkeys("\\\\f")'],
-			\ [ "| Open grep\t(\\\\g) |", 'call feedkeys("\\\\g")'],
-			\ [ "| Open buffer\t(\\\\b) |", 'call feedkeys("\\\\b")'],
+			\ [ "Save\t(:w)", 'write'],
+			\ [ "Save all\t(:wa)", 'write'],
 			\ [ "--", ],
-			\ [ "| Save\t(:w) |", 'write'],
-			\ [ "| Save all\t(:wa) |", 'write'],
-			\ [ "--", ],
-			\ [ "| Exit\t |", 'qa' ],
-			\ [ "--", ],
+			\ [ "Exit\t (:qa)|", 'qa' ],
 			\ ])
 
-call quickui#menu#install("Symbols", [
+call quickui#menu#install("&2. Symbols", [
+		\ [ "Signature help\t(C-k)", 'call feedkeys("\<C-k>")' ],
+			\ [ "Definition preview\t(gp)", 'call feedkeys("gp")' ],
+			\ [ "Goto declaration\t(gd)", 'call feedkeys("gd")' ],
+			\ [ "Show implementations\t(gi)", 'call feedkeys("gi")' ],
 			\ [ "--", ],
-			\ [ "| Signature help\t(C-k) |", 'call feedkeys("\<C-k>")' ],
-			\ [ "| Goto declaration\t(gD) |", 'call feedkeys("gD")' ],
-			\ [ "| Definition preview\t(gp) |", 'call feedkeys("gp")' ],
+			\ [ "Show line diagnostic\t(gL)", 'call feedkeys("gL")' ],
+			\ [ "Show all diagnostics\t(]d)", 'call feedkeys("gG")' ],
+			\ [ "Next diagnostic\t(]d)", 'call feedkeys("]d")' ],
+			\ [ "Previous diagnostic\t([d)", 'call feedkeys("[d")' ],
+			\ [ "Diagnostic toggle\t(\\dt)", 'call feedkeys("\\dt")' ],
 			\ [ "--", ],
+			\ [ "Toggle reference highlight\t(\\k)", 'call feedkeys("\\k")' ],
+			\ [ "--", ],
+			\ [ "Code action\t(<Space>ca)", 'call feedkeys(" ca")' ],
+			\ [ "Rename\t(<Space>rn)", 'call feedkeys(" rn")' ],
 			\ ])
 
+call quickui#menu#install("&3. View", [
+			\ [ "Open 3 splits\t(vsp4)", 'vsp<CR>vsp<CR>vsp<CR>' ],
+			\ [ "--", ],
+			\ [ "Close all buffers", 'BufferLineGroupClose ungrouped' ],
+			\ [ "Close all splits\t(on)", 'on' ],
+			\ ])
 " call quickui#menu#install("Edit", [
 " 			\ ['Copyright &Header', 'call feedkeys("\<esc> ec")', 'Insert copyright information at the beginning'],
 " 			\ ['&Trailing Space', 'call StripTrailingWhitespace()', ''],
@@ -91,7 +106,7 @@ call quickui#menu#install("Symbols", [
 " 			\ ])
 
 
-" if has('win32') || has('win64') || has('win16') || has('win95')
+" if has('win32')has('win64') || has('win16') || has('win95')
 " 	call quickui#menu#install("&Git", [
 " 				\ ['--',''],
 " 				\ ["Project &Update\t(Tortoise)", 'call svnhelp#tp_update()', 'TortoiseGit / TortoiseSvn'],
@@ -181,14 +196,35 @@ let g:context_menu_k = [
 			\ ['P&ython Doc', 'call quickui#tools#python_help("")', 'python'],
 			\ ]
 
+let g:context_menu_F8 = [
+			\ [ "--", ],
+			\ [ "Signature\t(C-k)", 'call feedkeys("<C-k>")'],
+			\ [ "Open grep\t(\\\\g)", 'call feedkeys("\\\\g")'],
+			\ [ "Open buffer\t(\\\\b)", 'call feedkeys("\\\\b")'],
+			\ [ "--", ],
+			\ [ "Save\t(:w)", 'write'],
+			\ [ "Save all\t(:wa)", 'write'],
+			\ [ "--", ],
+			\ [ "Exit\t", 'qa' ],
+			\ [ "--", ],
+			\ ]
+
+let content = [
+            \ [ 'echo 1                              ', 'echo 100' ],
+            \ [ 'echo 2', 'echo 200' ],
+            \ [ 'echo 3', 'echo 300' ],
+            \ [ 'echo 4' ],
+            \ [ 'echo 5', 'echo 500' ],
+            \]
+let opts = {'title': 'select one'}
+
+
+
 
 "----------------------------------------------------------------------
 " hotkey
 "----------------------------------------------------------------------
 nnoremap <silent><space><space> :call quickui#menu#open()<cr>
+nnoremap <silent><F8> :call quickui#tools#clever_context('k', g:context_menu_F8, {})<cr>
+nnoremap <silent><F9> :call quickui#listbox#open(content, opts)<cr>
 
-nnoremap <silent>K :call quickui#tools#clever_context('k', g:context_menu_k, {})<cr>
-
-if has('gui_running') || has('nvim')
-	noremap <c-f10> :call MenuHelp_TaskList()<cr>
-endif

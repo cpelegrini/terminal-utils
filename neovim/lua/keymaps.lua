@@ -26,7 +26,8 @@ set("t", "<Esc>", "<C-\\><C-n><C-w><C-w>", ns)
 
 
 -- Clean Search
-set("n", "<Leader><Leader><Space>", ":let @/=''<CR>", ns)
+-- set("n", "<Leader><Leader><Space>", ":let @/=''<CR>", ns)
+set("n", "<Leader><Leader><Space>", ":nohl<CR>", ns)
 
 -- Panes
 set("n", "<Space>m", "<C-w>w", ns) -- go to next pane

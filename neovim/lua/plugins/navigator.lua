@@ -78,6 +78,7 @@ require'navigator'.setup({
     diagnostic_update_in_insert = false, -- update diagnostic message in insert mode
     disply_diagnostic_qf = true, -- always show quickfix if there are diagnostic errors, set to false if you  want to ignore it
     tsserver = {
+      cmd = { "typescript-language-server", "--stdio" },
       filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" } 
       -- disable javascript etc,
       -- set to {} to disable the lspclient for all filetypes
@@ -114,6 +115,10 @@ require'navigator'.setup({
       sumneko_root_path = vim.fn.expand("$HOME") .. "/github/sumneko/lua-language-server",
       sumneko_binary = vim.fn.expand("$HOME") .. "/github/sumneko/lua-language-server/bin/macOS/lua-language-server",
     },
+    marksman ={
+      cmd = { "marksman", "server" },
+      filetypes = { "markdown" }
+    },
     servers = {'cmake', 'ltex'}, -- by default empty, and it should load all LSP clients avalible based on filetype
     -- but if you whant navigator load  e.g. `cmake` and `ltex` for you , you
     -- can put them in the `servers` list and navigator will auto load them.
@@ -122,4 +127,11 @@ require'navigator'.setup({
   }
 })
 
+-- Other server configs
 
+require 'lspconfig'.csharp_ls.setup {}
+require'lspconfig'.tailwindcss.setup{}
+require 'lspconfig'.marksman.setup {
+  cmd = { "marksman", "server" },
+  filetypes = { "markdown" }
+}

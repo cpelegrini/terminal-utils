@@ -13,7 +13,8 @@ require('paq') {
    'ldelossa/vimdark';
    'owickstrom/vim-colors-paramount';
    --
-   'famiu/feline.nvim';
+   --'famiu/feline.nvim'; -- status line
+   'nvim-lualine/lualine.nvim'; -- status line 
    'kyazdani42/nvim-web-devicons';
    'kyazdani42/nvim-tree.lua';
    'nvim-telescope/telescope.nvim';
@@ -27,7 +28,9 @@ require('paq') {
    -- -- 'vim-airline/vim-airline';
    -- -- 'vim-airline/vim-airline-themes';
    -- -- 'ellisonleao/glow.nvim';
-   'plasticboy/vim-markdown';
+   -- 'plasticboy/vim-markdown';
+   'tpope/vim-markdown';
+   'princejoogie/tailwind-highlight.nvim';
    --
    -- -- LSP
    'neovim/nvim-lspconfig';

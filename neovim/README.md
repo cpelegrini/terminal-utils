@@ -4,15 +4,15 @@ My vim (neovim) guide for everything.
 
 ## Vim guides
 
--  [Neovim](https://www.lunarvim.org/configuration/01-settings.html#example-options)
--  [QuickRef](https://quickref.me/vim?q=s)
--  [DevHints](https://devhints.io/vim)
+-   [Neovim](https://www.lunarvim.org/configuration/01-settings.html#example-options)
+-   [QuickRef](https://quickref.me/vim?q=s)
+-   [DevHints](https://devhints.io/vim)
 
 [fork from enriquesaid](https://github.com/enriquesaid/nvim-config)
 
 ## 1. MacOS Installations
 
--  [nvim](https://neovim.io/)
+-   [nvim](https://neovim.io/)
 
 ```bash
 brew install neovim
@@ -24,31 +24,31 @@ Neovim instalation folder:
 ~/.local/share/nvim
 ```
 
--  [paq-nvim](https://github.com/savq/paq-nvim)
--  [dracula](https://github.com/dracula/vim) color scheme
--  [devicons](https://github.com/ryanoasis/vim-devicons)
+-   [paq-nvim](https://github.com/savq/paq-nvim)
+-   [dracula](https://github.com/dracula/vim) color scheme
+-   [devicons](https://github.com/ryanoasis/vim-devicons)
 
 ### Color Schemes
 
 [vimcolorschemes](https://vimcolorschemes.com/)
 
-
 ### Others neovim guides
 
--  [fanwangecon](https://fanwangecon.github.io/Tex4Econ/nontex/install/linux/fn_vim.html)
--  [book portuguese](https://juliobiason.gitbooks.io/uma-licao-de-vim/content/index.html)
+-   [fanwangecon](https://fanwangecon.github.io/Tex4Econ/nontex/install/linux/fn_vim.html)
+-   [book portuguese](https://juliobiason.gitbooks.io/uma-licao-de-vim/content/index.html)
 
 ## Create config folder
 
--  Create symbolic link to nvim config folder
--  Current folder is _./nvim_
+-   Create symbolic link to nvim config folder
+-   Current folder is _./nvim_
 
 ```bash
 ln -s $(pwd) ~/.config/nvim
 ```
 
 ## 2. Neovim Installations
-* neovim plugins folder (macos): ~/.local/share/nvim/site/pack/paqs/start
+
+-   neovim plugins folder (macos): ~/.local/share/nvim/site/pack/paqs/start
 
 ```vim
 :PaqInstall
@@ -67,6 +67,8 @@ ln -s $(pwd) ~/.config/nvim
 :LspInstall sqlls
 :LspInstall yamls
 :LspInstall sumneko_lua
+:LspInstall tailwindcss
+:LspInstall tsserver
 
 
 :TSInstall lua

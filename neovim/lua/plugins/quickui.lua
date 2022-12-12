@@ -1,6 +1,6 @@
 
 vim.cmd [[
-    let g:quickui_border_style = 0
+    let g:quickui_border_style = 1
     let g:quickui_color_scheme = 'papercol dark'
     let g:quickui_preview_w = 100
     let g:quickui_preview_h = 15

@@ -21,6 +21,6 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {desc = 'Remap: Move selected text 
 vim.keymap.set("n", "J", "mzJ`z", {desc = 'Remap: Join current line with line below'})
 
 -- vim.keymap.set("x", "<leader>p", [["_dP]], {desc = 'Remap: Paste from registry [d]'})  
--- vim.keymap.set({"n", "v"}, "<leader>y", [["+y]], {desc = 'Remap: '})
--- vim.keymap.set("n", "<leader>Y", [["+Y]], {desc = 'Remap: '})
+vim.keymap.set({"n", "v"}, "<leader>y", [["*y]], {desc = 'Remap: Yank selected to OS clipboard'})
+vim.keymap.set("n", "<leader>Y", [["*Y]], {desc = 'Remap: Yank line to OS clipboard'})
 -- vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], {desc = 'Remap: Delete and copy to registry [d]'})

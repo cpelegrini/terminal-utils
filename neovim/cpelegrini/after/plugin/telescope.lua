@@ -8,7 +8,7 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
-    initial_mode = 'normal'
+    --initial_mode = 'normal'
   },
 }
 

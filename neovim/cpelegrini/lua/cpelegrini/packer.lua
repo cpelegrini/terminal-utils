@@ -56,6 +56,9 @@ require('packer').startup(function(use)
       end
    })
 
+   -- Show color code with visual color
+   use('norcalli/nvim-colorizer.lua')
+
   if is_bootstrap then
     require('packer').sync()
   end

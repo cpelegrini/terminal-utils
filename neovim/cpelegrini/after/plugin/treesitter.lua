@@ -64,5 +64,5 @@ require('nvim-treesitter.configs').setup {
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {desc = 'TreeSitter: Goto Prev'})
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {desc = 'TreeSitter: Goto Next'})
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {desc = 'TreeSitter: Open Fload'})
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {desc = 'TreeSitter: Open Float'})
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, {desc = 'TreeSitter: Set Loclist'})

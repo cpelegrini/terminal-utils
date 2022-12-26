@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, {desc = 'Remap: Open Explorer'})
-vim.keymap.set("n", "<leader>\\", "<C-w>w", {desc = 'Remap: Open Explorer'})
+vim.keymap.set("n", "<tab>", "<C-w>w", {desc = 'Remap: switch windows focus'})
+vim.keymap.set("n", ",", ":", {desc = 'Remap: Enter command mode'})
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
@@ -24,3 +25,4 @@ vim.keymap.set("n", "J", "mzJ`z", {desc = 'Remap: Join current line with line be
 vim.keymap.set({"n", "v"}, "<leader>y", [["*y]], {desc = 'Remap: Yank selected to OS clipboard'})
 vim.keymap.set("n", "<leader>Y", [["*Y]], {desc = 'Remap: Yank line to OS clipboard'})
 -- vim.keymap.set({"n", "v"}, "<leader>d", [["_d]], {desc = 'Remap: Delete and copy to registry [d]'})
+

@@ -1,3 +1,4 @@
 session-*
 neovim/session-*
+neovim/sessions
 .DS_Store

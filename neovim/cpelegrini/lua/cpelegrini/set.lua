@@ -32,7 +32,7 @@ vim.o.termguicolors = true
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
-vim.o.textwidth = 90  -- maximum text width to format
+vim.o.textwidth = 80  -- maximum text width to format
 vim.o.cmdheight = 2
 vim.o.number = true
 vim.o.relativenumber = false
@@ -48,11 +48,20 @@ vim.o.splitbelow = true
 vim.o.colorcolumn = '90'
 vim.o.cursorcolumn = false
 vim.o.cursorline = true
-vim.o.scrolloff = 10
+vim.o.scrolloff = 10 -- 999 cursor stay at middle screen
 vim.o.expandtab = true
 vim.o.shiftwidth = 3
 vim.o.tabstop = 3
 vim.o.smartindent = true
+
+-- Cursor center screen. Fix some problems about center cursor: scrolloff
+-- vim.cmd [[
+--    augroup VCenterCursor
+--    au!
+--    au BufEnter,WinEnter,WinNew,VimResized *,*.*
+--    \ let &scrolloff=winheight(win_getid())/2
+--    augroup END
+-- ]]
 
 -- Terminal
 vim.cmd [[

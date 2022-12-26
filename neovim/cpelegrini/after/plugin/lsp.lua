@@ -57,18 +57,21 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-
-  sumneko_lua = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
+   -- clangd = {},
+   -- gopls = {},
+   -- pyright = {},
+   -- rust_analyzer = {},
+   --     'tsserver',
+   eslint = {},
+   html = {},
+   cssls = {},
+   tsserver = {},
+   sumneko_lua = {
+      Lua = {
+         workspace = { checkThirdParty = false },
+         telemetry = { enable = false },
+      },
+   },
 }
 
 -- Setup neovim lua configuration
@@ -79,7 +82,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Setup mason so it can manage external tooling
-require('mason').setup()
+require('mason').setup({
+  ui = {border = 'rounded'}
+})
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
@@ -108,6 +113,25 @@ require 'lspconfig'.tsserver.setup {
   cmd = { "typescript-language-server", "--stdio" }
 }
 
+vim.diagnostic.config({
+  virtual_text = false,
+  severity_sort = true,
+  float = {
+    border = 'rounded',
+    source = 'always',
+    header = '',
+    prefix = '',
+  },
+})
 
+vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {border = 'rounded'}
+)
+
+vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  {border = 'rounded'}
+)
 -- Turn on lsp status information
 require('fidget').setup()

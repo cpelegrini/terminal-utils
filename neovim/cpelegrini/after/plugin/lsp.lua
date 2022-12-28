@@ -117,7 +117,7 @@ vim.diagnostic.config({
   virtual_text = false,
   severity_sort = true,
   float = {
-    border = 'rounded',
+    border = '',
     source = 'always',
     header = '',
     prefix = '',
@@ -126,12 +126,12 @@ vim.diagnostic.config({
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
   vim.lsp.handlers.hover,
-  {border = 'rounded'}
+  {border = ''}
 )
 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
   vim.lsp.handlers.signature_help,
-  {border = 'rounded'}
+  {border = ''}
 )
 -- Turn on lsp status information
 require('fidget').setup()

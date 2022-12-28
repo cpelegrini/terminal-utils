@@ -63,6 +63,12 @@ vim.o.smartindent = true
 --    augroup END
 -- ]]
 
+-- Add matchit macro to navigation between tags <x></x> using %
+vim.cmd [[
+   packadd! matchit
+   filetype plugin on
+]]
+
 -- Terminal
 vim.cmd [[
   let g:conceallevel = 0

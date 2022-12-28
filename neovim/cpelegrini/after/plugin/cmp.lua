@@ -50,20 +50,21 @@ cmp.setup {
       { name = 'path' },
    },
    window = {
-      documentation = cmp.config.window.bordered()
+      documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered()
    },
    formatting = {
       fields = { 'menu', 'abbr', 'kind' },
-      -- format = function(entry, item)
-      --    local menu_icon = {
-      --       nvim_lsp = 'λ',
-      --       luasnip = '⋗',
-      --       buffer = 'Ω',
-      --       path = '🖫',
-      --    }
+      format = function(entry, item)
+         local menu_icon = {
+            nvim_lsp = 'lsp',
+            luasnip = 'lsn',
+            buffer = 'buf',
+            path = 'pat',
+         }
 
-      --    item.menu = menu_icon[entry.source.name]
-      --    return item
-      -- end,
+         item.menu = menu_icon[entry.source.name]
+         return item
+      end,
    },
 }

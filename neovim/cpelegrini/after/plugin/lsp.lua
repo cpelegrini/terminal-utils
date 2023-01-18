@@ -117,7 +117,7 @@ vim.diagnostic.config({
   virtual_text = false,
   severity_sort = true,
   float = {
-    border = '',
+    border = 'rounded',
     source = 'always',
     header = '',
     prefix = '',

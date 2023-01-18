@@ -27,6 +27,7 @@ C-w v | :vnew                      new vertical window
 :e <file> | .                      opens buffer
 :b Tab                             show list of buffers
 :bd                                closes buffer
+:bufdo bd                          closes all buffers
 C-^                                alternate to last buffer
 :buffers                           show buffer list
 :ls                                show buffer list
@@ -43,13 +44,17 @@ C-w T                              moves current window to new tabpage
 :h tabpage                         help about tabpages
 :tabs                              list of tab pages
 :tab split                         opens current buffer in new tab page 
-:tabnew                            new tab
-:tabc                              close current tab
+:tab help tabpage                  opens command at new tab page
+:tabnew (A-t)                      new tab
+:tabc (A-c)                        close current tab
 :tabo                              close all others tab
-gt                                 go to next tab
-gTab                               go to last accessed tab
-:tabn                              go to next tab
-:tabm 1                            move tab to the right
+gt (A-l)                           go to next tab
+gT (A-h)                           go to previous tab
+:tabn (A-t)                        go to next tab
+:tabfir (A-f)                      go to first tab
+:tablas (A-g)                      go to last tab
+:tabm 1 (A-k)                      move tab to the right
+:tabm -1 (A-j)                     move tab to the left
 ```
 ### Explorer
 ```sh
@@ -83,9 +88,16 @@ Leader p                           Previous item
 C-d                                indent to left
 C-t                                indent to right
 C-o                                execute a command and return to insert mode
+C-w                                deletes word before cursor
+C-u                                deletes all line before cursor
+C-r <register>                     inserts register contents
+C-r =                              Expression register, ex: =system('ls')
+C-r <register>                     Inserts register content to buffer
 ```
 ### Normal Mode
 ```sh
+Enter (<CR>) | +                   Moves next line in first character
+- (minus)                          Moves previous line in first character
 H                                  cursor to top of screen
 L                                  cursor to bottom of screen
 M                                  cursor to middle of screen
@@ -102,14 +114,30 @@ C-d                                Moves cursor & screen down ½ page
 C-b                                Moves screen up one page, cursor to last line
 C-f                                Moves screen down one page, cursor to first line
 %                                  Moves to end or begin of structure (tag or function)
+gw                                 Formats text to wrap text witdh. Keeps cursor
+gq                                 Same gw but moves cursor to the end 
+c/test                             Deletes until "test" word and insert mode
+[{                                 jumps to beginning general function
+]}                                 jumps to end of general function
+[m                                 jumps to previous function beginning
+]m                                 jumps to next function beginning
+[M                                 jumps to previous function end
+]M                                 jumps to next function end
 ```
 ### Visual Mode
 ```sh
 gq                                 formats text with textwidth setting
 ```
-##### Command Mode
+### Command Mode
 ```sh
 q:                                 shows command history
+:com                               shows user commands
+:norm <commands>                   executes commands like normal mode
+:'<,'>norm I//                     inserts comment at selection lines
+```
+### Substitution
+```sh
+:10,11s#^#//                       insert commentary // in lines 10 and 11
 ```
 ### Tips
 ##### Abbreviations
@@ -150,6 +178,15 @@ C-Space                            complete
 Leader e                           open float
 Leader q                           set loclist
 ```
+### Recordings
+```sh
+Exemple to generate todo list:
+Type:
+1. [ ] 
+Record: q a y y C-a C-a q
+Execute: 10@a
+Result: Numbered list
+```
 ### Registers
 ```sh
 :h registers                       shows help about registers
@@ -173,4 +210,9 @@ nvim -S <name>                     opens session
 :mkview                            save current view for current file
 :loadview                          load saved view for the current file
 :mkview 1                          specify 1-9 views for file
+```
+### Git Fugitive
+```sh
+:G diff                            Shows diff current file with git
+:G logs                            Shows diff logs
 ```

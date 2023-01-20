@@ -6,3 +6,8 @@ This a console file manager with VIM key bindings.
 * [User Guide](https://github.com/ranger/ranger/wiki/Official-User-Guide)
 ## My settings
 
+### Configuration
+Create symbolic link
+```bash
+ln -s $(pwd) ~/.config/ranger 
+```

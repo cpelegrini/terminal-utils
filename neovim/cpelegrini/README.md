@@ -9,6 +9,14 @@
 
 ## Setup neovim configuration
 
+1. Ubuntu:
+Install neovim by curl and:
+```bash
+sudo apt install build-essential
+sudo apt install unzip
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+sudo apt install -y nodejs
+```
 1. Create a symlink
    ```bash
       ln -s $(pwd) ~/.config/nvim
@@ -20,3 +28,5 @@
 ```bash
 :PackerSync
 ```
+
+

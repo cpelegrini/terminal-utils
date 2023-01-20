@@ -135,6 +135,11 @@ q:                                 shows command history
 :norm <commands>                   executes commands like normal mode
 :'<,'>norm I//                     inserts comment at selection lines
 ```
+### Terminal Mode
+```sh
+:term                              opens a terminal
+C-\ C-n                            exits from insert in terminal mode 
+```
 ### Substitution
 ```sh
 :10,11s#^#//                       insert commentary // in lines 10 and 11

@@ -38,6 +38,8 @@ require('packer').startup(function(use)
          pcall(require('nvim-treesitter.install').update { with_sync = true })
       end,
    }
+   -- surround text 
+   use 'tpope/vim-surround'
 
    use { -- Additional text objects via treesitter
       'nvim-treesitter/nvim-treesitter-textobjects',
@@ -52,6 +54,9 @@ require('packer').startup(function(use)
 
    -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
+
+   -- Shows marks on left of editor
+   use 'kshenoy/vim-signature'
 
    -- colorscheme
    use({ 'rose-pine/neovim', as = 'rose-pine', config = function()

@@ -33,6 +33,8 @@ C-^                                alternate to last buffer
 :ls                                show buffer list
 :sp +10                            Split from line 10
 C-w T                              moves current window to new tabpage
+:topleft vs                        creates vertical window top left
+:botright sp                       creates horizontal split on bottom
 ```
 ##### Resizing
 ```sh
@@ -56,8 +58,9 @@ gT (A-h)                           go to previous tab
 :tabm 1 (A-k)                      move tab to the right
 :tabm -1 (A-j)                     move tab to the left
 ```
-### Explorer
+### Explorer (netrw)
 ```sh
+i                                  show banner
 :Ex                                open explore
 :Ve                                open explore in vertical split
 :He                                open explore in horizontal split at bottom
@@ -67,6 +70,13 @@ d                                  new directory
 R                                  rename file or directory
 D                                  delete
 v                                  open current file at new vertical 
+gh                                 toggles the hidden files
+mt                                 assign "target directory"
+mf                                 marks a file or dir to multiple actions 
+mu                                 unmark all items
+mc                                 copy the marked items to "target dir" 
+mm                                 move the marked items to "target dir" 
+mx                                 runs a external command on marked items 
 ```
 ### Telescope
 ```sh
@@ -127,6 +137,7 @@ c/test                             Deletes until "test" word and insert mode
 ### Visual Mode
 ```sh
 gq                                 formats text with textwidth setting
+vg_                                selects until last char in line
 ```
 ### Command Mode
 ```sh
@@ -144,6 +155,21 @@ C-\ C-n                            exits from insert in terminal mode
 ```sh
 :10,11s#^#//                       insert commentary // in lines 10 and 11
 ```
+* To copy and paste text to command:
+- Yank text, type C-r" to paste at command line
+
+### Surround
+```sh
+ysw'                               surround word with '
+yss{                               surrounds line with { }
+cs"'                               change current surround from " to '
+cst                                changes surround tag
+ds'                                deletes surround '
+dst                                deletes surround tag
+S'                                 surrounds selection by '
+S{                                 surrounds selection and indent content
+```
+
 ### Tips
 ##### Abbreviations
 ```sh
@@ -191,6 +217,20 @@ Type:
 Record: q a y y C-a C-a q
 Execute: 10@a
 Result: Numbered list
+```
+### Marks
+```sh
+:marks                             shows all marks
+ma                                 creates a mark with name "a"
+'a                                 jumps to mark "a"
+dma                                deletes mark "a"
+```
+### Folding
+```sh
+:set foldlevel=2                   sets fold level to show
+za                                 toggles current open fold   
+zc                                 closes the curent fold
+zo                                 opens the current fold
 ```
 ### Registers
 ```sh

@@ -42,7 +42,7 @@ vim.o.showmatch = true
 vim.o.showmode = true
 vim.o.foldenable = true
 vim.o.foldmethod = 'indent'
-vim.o.foldlevelstart=20
+vim.o.foldlevelstart=99
 vim.o.splitright = true
 vim.o.splitbelow = true
 vim.o.colorcolumn = '90'
@@ -69,10 +69,17 @@ vim.cmd [[
    filetype plugin on
 ]]
 
+-- Netrw
+vim.cmd [[
+   let g:netrw_banner=0
+   let g:netrw_preview = 1
+   let g:netrw_alto = 0
+]]
 -- Terminal
 vim.cmd [[
   let g:conceallevel = 0
   let g:indentLine_conceallevel = 0
+  autocmd VimEnter * :Explore
 ]]
 
 -- Prettier enable on save

@@ -12,6 +12,7 @@ call plug#begin()
 
 Plug 'tpope/vim-surround'
 Plug 'kshenoy/vim-signature'
+Plug 'dracula/vim'
 Plug 'itsjunetime/rose-pine-vim'
 
 
@@ -26,7 +27,7 @@ call plug#end()
 "settings
 "*******************
 
-colo rose-pine-dark
+" colo rose-pine-dark
 syntax on
 
 set nohls
@@ -50,7 +51,7 @@ set termguicolors
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noselect
 set textwidth=80  " maximum text width to format
-set cmdheight=2
+set cmdheight=1
 set nowrap 
 set signcolumn=yes
 set showmatch
@@ -77,5 +78,5 @@ let g:netrw_alto=0
 " Terminal
 let g:conceallevel=0
 let g:indentLine_conceallevel=0
-autocmd VimEnter * :Explore
+"autocmd VimEnter * :Explore
 

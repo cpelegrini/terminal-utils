@@ -59,6 +59,7 @@ gT (A-h)                           go to previous tab
 :tabm -1 (A-j)                     move tab to the left
 ```
 ### Explorer (netrw)
+[commands](https://gist.github.com/danidiaz/37a69305e2ed3319bfff9631175c5d0f)
 ```sh
 i                                  show banner
 :Ex                                open explore

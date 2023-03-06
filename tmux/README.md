@@ -5,7 +5,7 @@ Follow this steps: \
 MacOS:
 ```bash
 brew install tmux
-``
+```
 ## Configuration tmux italics
 
 [Guide](https://gist.github.com/bbqtd/a4ac060d6f6b9ea6fe3aabe735aa9d95)
@@ -18,6 +18,7 @@ brew install tmux
 ln -s $(pwd)/tmux.conf ~/.tmux.conf
 ln -s $(pwd)/dracula.tmuxtheme ~/dracula.tmuxtheme
 ```
+* [Color palette](https://i.stack.imgur.com/e63et.png)
 
 ## Install plugins
 

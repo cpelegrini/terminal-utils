@@ -15,7 +15,7 @@ vim.keymap.set("n", "©", ":tablast<CR>", { desc = 'remap: <A-g> Tab last' })
 
 
 --vim.keymap.set("n", "<F4>", ":let @* = expand('%:p:h')<CR>", {desc = 'Remap: Copy current folder to clipboard'})
-vim.keymap.set("n", "<f4>", ":let @* = expand('%:p:h')", { desc = 'Remap: Copy current folder to clipboard' })
+vim.keymap.set("n", "<leader>4", ":let @*=expand('%:p:h')<CR>", { desc = 'Remap: Copy current folder to clipboard' })
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 

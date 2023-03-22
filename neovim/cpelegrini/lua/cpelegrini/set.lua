@@ -79,8 +79,8 @@ vim.cmd [[
 vim.cmd [[
   let g:conceallevel = 0
   let g:indentLine_conceallevel = 0
-  autocmd VimEnter * :Explore
 ]]
+  -- autocmd VimEnter * :Explore
 
 -- Prettier enable on save
 vim.cmd [[

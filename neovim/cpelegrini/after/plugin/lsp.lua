@@ -66,12 +66,12 @@ local servers = {
    html = {},
    cssls = {},
    tsserver = {},
-   sumneko_lua = {
-      Lua = {
-         workspace = { checkThirdParty = false },
-         telemetry = { enable = false },
-      },
-   },
+   -- sumneko_lua = {
+   --    Lua = {
+   --       workspace = { checkThirdParty = false },
+   --       telemetry = { enable = false },
+   --    },
+   -- },
 }
 
 -- Setup neovim lua configuration

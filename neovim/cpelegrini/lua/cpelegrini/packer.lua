@@ -38,7 +38,7 @@ require('packer').startup(function(use)
          pcall(require('nvim-treesitter.install').update { with_sync = true })
       end,
    }
-   -- surround text 
+   -- surround text
    use 'tpope/vim-surround'
 
    use { -- Additional text objects via treesitter
@@ -67,9 +67,18 @@ require('packer').startup(function(use)
    -- Show color code with visual color
    use('norcalli/nvim-colorizer.lua')
 
+   use({
+      "lmburns/lf.nvim",
+      requires = { "nvim-lua/plenary.nvim", "akinsho/toggleterm.nvim" },
+   })
+
    if is_bootstrap then
       require('packer').sync()
    end
+
+
+
+
 end)
 
 -- When we are bootstrapping a configuration, it doesn't

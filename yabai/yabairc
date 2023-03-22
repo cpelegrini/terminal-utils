@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
 
 # global settings
 yabai -m config mouse_follows_focus          off
@@ -27,7 +27,7 @@ yabai -m config mouse_action2                resize
 yabai -m config mouse_drop_action            swap
 
 # general space settings
-yabai -m config layout                       bsp
+yabai -m config layout                       bsp   # bsp, float, stack
 yabai -m config top_padding                  15
 yabai -m config bottom_padding               15
 yabai -m config left_padding                 15
@@ -39,13 +39,25 @@ yabai -m config window_gap                   15
 # apps to not manage (ignore)
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
-yabai -m rule --add app="^Wally$" manage=off
-yabai -m rule --add app="^Pika$" manage=off
-yabai -m rule --add app="^balenaEtcher$" manage=off
 yabai -m rule --add app="^Creative Cloud$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
-yabai -m rule --add app="^Alfred Preferences$" manage=off
-yabai -m rule --add app="Raycast" manage=off
-yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^1Password$" manage=off
+
+
+# personal spaces
+yabai -m config --space 3 layout float  # third monitor doesnt work with bsp
+
+focus_window () {
+   SPACE_NAME=$(yabai -m query --spaces --space | jq ".label")
+      WINDOW_ID=$(yabai -m query --windows --space | jq ".[] | select (.app=${SPACE_NAME}).id")
+      yabai -m window --focus "${WINDOW_ID}"
+}
+# focus window after active space changes
+yabai -m signal --add event=space_changed action="focus_window"
+# focus window after active display changes
+yabai -m signal --add event=display_changed action="focus_window" 
+
+
 
 echo "yabai configuration loaded.."

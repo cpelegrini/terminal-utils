@@ -21,6 +21,14 @@ vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 99
 
 
+-- Netrw / Explore
+vim.cmd [[
+   let g:netrw_banner=0
+   let g:netrw_preview = 1
+   let g:netrw_alto = 0
+]]
+
+
 -- status line with mode: text mode (INSERT, NORMAL ... )
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 
@@ -42,8 +50,10 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-Tab>"] = ":bNext<cr>"
 vim.keymap.set({ "n", "v" }, "<leader>y", [["*y]], { desc = 'Yank selected to OS clipboard' })
-vim.keymap.set({ "n", "v" }, "<leader>tn", ":tabNext<cr>", { desc = 'Next tab' })
-vim.keymap.set({ "n", "v" }, "<leader>tt", ":tabnew<cr>", { desc = 'New tab' })
+vim.keymap.set({ "n", "v" }, "<leader>tn", ":tabNext<cr>", { desc = 'TAB: Go to next' })
+vim.keymap.set({ "n", "v" }, "<leader>tp", ":tabprevious<cr>", { desc = 'TAB: Go to previous' })
+vim.keymap.set({ "n", "v" }, "<leader>tt", ":tabnew<cr>", { desc = 'TAB: Create new' })
+vim.keymap.set({ "n", "v" }, "<leader>tc", ":tabclose<cr>", { desc = 'TAB: Close current' })
 
 
 
@@ -54,9 +64,9 @@ vim.keymap.set({ "n", "v" }, "<leader>tt", ":tabnew<cr>", { desc = 'New tab' })
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
--- -- Change theme settings
+-- THEME / COLORS SETTINGS
 -- lvim.colorscheme = "lunar"
--- lvim.transparent_window = false
+lvim.transparent_window = true
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -169,3 +179,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
    group = highlight_group,
    pattern = '*',
 })
+
+
+
+require 'lspconfig'.csharp_ls.setup {}
+

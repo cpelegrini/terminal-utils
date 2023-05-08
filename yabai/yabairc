@@ -43,10 +43,13 @@ yabai -m rule --add app="^Creative Cloud$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
+yabai -m rule --add app="Evernote" manage=off
+yabai -m rule --add app="Todoist" manage=off
+yabai -m rule --add app="Microsoft Teams" manage=off
 
 
 # personal spaces
-yabai -m config --space 3 layout float  # third monitor doesnt work with bsp
+# yabai -m config --space 3 layout float  # third monitor doesnt work with bsp
 
 focus_window () {
    SPACE_NAME=$(yabai -m query --spaces --space | jq ".label")

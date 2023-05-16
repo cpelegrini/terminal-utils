@@ -4,6 +4,7 @@
 1. Create a symlink
    ```bash
       ln -s $(pwd)/config.lua ~/.config/lvim/config.lua
+      ln -s $(pwd)/lua ~/.config/lvim
    ```
 
 

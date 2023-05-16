@@ -13,3 +13,13 @@
       mkdir -p ~/.config/skhd
       ln -s $(pwd)/skhdrc ~/.config/skhd/skhdrc
    ```
+
+## Yabai log
+Location:
+/usr/local/var/log/yabai
+```bash
+cat /usr/local/var/log/yabai/yabai.err.log
+```
+```bash
+cat /usr/local/var/log/yabai/yabai.out.log
+```

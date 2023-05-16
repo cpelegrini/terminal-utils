@@ -1,6 +1,6 @@
 
 -- THEME / COLORS SETTINGS
--- lvim.colorscheme = "lunar"
+lvim.colorscheme = "lunar"
 -- lvim.transparent_window = true
 --
 

@@ -1,9 +1,4 @@
-reload("config.options")
-reload("config.keymap")
-reload("config.color")
-reload("config.plugins")
-
-
-
-
-
+require("user.options")
+reload("user.keymap")
+reload("user.color")
+reload("user.plugins")

@@ -1,9 +1,39 @@
+table.insert(lvim.plugins, {
+   "nvim-lualine/lualine.nvim",
+   dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+   config = function()
+      require("lvim.core.lualine").setup()
+   end,
+   lazy = false
+})
+table.insert(lvim.plugins, {
+   "zbirenbaum/copilot.lua",
+   cmd = "Copilot",
+   event = "InsertEnter",
+   config = function()
+      require("copilot").setup()
+      -- require("copilot").setup({
+      --    suggestion = { enabled = false },
+      --    panel = { enabled = false },
+      -- })
+   end,
+}
+)
+table.insert(lvim.plugins, {
+   "zbirenbaum/copilot-cmp",
+   after = { "copilot.lua" },
+   config = function()
+      require("copilot_cmp").setup()
+   end
+})
+
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.bufferline.active = false
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
@@ -104,4 +134,3 @@ formatters.setup {
 -- })
 --
 require 'lspconfig'.csharp_ls.setup {}
-

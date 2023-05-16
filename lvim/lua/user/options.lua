@@ -21,11 +21,11 @@ vim.opt.foldlevel = 99
 
 
 -- Netrw / Explore
-vim.cmd [[
-   let g:netrw_banner=0
-   let g:netrw_preview = 1
-   let g:netrw_alto = 0
-]]
+-- vim.cmd [[
+--    let g:netrw_banner=0
+--    let g:netrw_preview = 1
+--    let g:netrw_alto = 0
+-- ]]
 
 
 -- status line with mode: text mode (INSERT, NORMAL ... )

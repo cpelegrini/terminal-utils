@@ -20,9 +20,9 @@ launchctl unload -F /System/Library/LaunchAgents/com.apple.OSDUIHelper.plist > /
 
 # Setting up the general bar appearance of the bar
 bar=(
-  height=45
+  height=35
   color=$BAR_COLOR
-  border_width=2
+  border_width=1
   border_color=$BAR_BORDER_COLOR
   shadow=off
   position=top
@@ -50,7 +50,7 @@ defaults=(
   padding_left=$PADDINGS
   background.height=26
   background.corner_radius=9
-  background.border_width=2
+  background.border_width=1
   popup.background.border_width=2
   popup.background.corner_radius=9
   popup.background.border_color=$POPUP_BORDER_COLOR
@@ -72,7 +72,7 @@ source "$ITEM_DIR/front_app.sh"
 
 # Right
 source "$ITEM_DIR/calendar.sh"
-# source "$ITEM_DIR/brew.sh"
+source "$ITEM_DIR/brew.sh"
 # source "$ITEM_DIR/github.sh"
 source "$ITEM_DIR/battery.sh"
 source "$ITEM_DIR/volume.sh"

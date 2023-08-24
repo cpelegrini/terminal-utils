@@ -102,13 +102,15 @@ export NNN_FIFO=/tmp/nnn.fifo                # preview
 export NNN_TMPFILE='/tmp/.lastd'             # cd on exit
 export NNN_BMS="d:$HOME/Downloads;D:$HOME/Documents;p:/Volumes/ExtraData/Projects" # bookmarks
 # Plugins
-NNN_PLUG_PERSONAL='l:-!lvim "$nnn";m:! echo "$PWD/$nnn"'
+NNN_PLUG_PERSONAL='l:-!lvim "$nnn"*;m:! echo "$PWD/$nnn";g:-!lazygit*'
 NNN_PLUG_INLINE='e:!go run "$nnn"*'
 NNN_PLUG_DEFAULT='1:ipinfo;p:preview-tui;o:fzopen'
 NNN_PLUG="$NNN_PLUG_PERSONAL;$NNN_PLUG_DEFAULT;$NNN_PLUG_INLINE"
 export NNN_PLUG
 # Colors
-BLK="0B" CHR="0B" DIR="04" EXE="06" REG="00" HARDLINK="06" SYMLINK="06" MISSING="00" ORPHAN="09" FIFO="06" SOCK="0B" OTHER="06"
+BLK="0B" CHR="0B" DIR="69" EXE="06" REG="00" 
+HARDLINK="06" SYMLINK="08" MISSING="00" 
+ORPHAN="09" FIFO="06" SOCK="0B" OTHER="06"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 export NNN_COLORS='#0a1b2c3d;1234' # (/'#0a1b2c3d'/'#0a1b2c3d;1234')
 
@@ -120,6 +122,9 @@ function nnn () {
     fi
 }
 
+# Kitty
+export TERM=xterm-256color
+
 ### ALIASES
 # lock screen and turn off bluetooth and wifi
 alias lock='shortcuts run "Ligar flight mode"; pmset displaysleepnow'
@@ -129,6 +134,7 @@ alias cls="clear; tmux clearhist"
 alias aws="op run --env-file=$HOME/.config/op/aws.env -- aws"
 alias n="nnn -Rd"
 alias l="lvim"
+alias t="tmux attach || tmux"
 
 ## Configuracaod de historico por tab
 unsetopt inc_append_history

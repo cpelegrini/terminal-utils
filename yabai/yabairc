@@ -37,15 +37,17 @@ yabai -m config right_padding                5
 yabai -m config window_gap                   5
 
 # apps to not manage (ignore)
-yabai -m rule --add app="^System Settings$" manage=off
+#yabai -m rule --add app="^System Settings$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Creative Cloud$" manage=off
 yabai -m rule --add app="^Logi Options$" manage=off
-yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^1Password$" manage=off
+yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
+yabai -m rule --add app="^1Password$" sticky=on layer=above manage=off
 # yabai -m rule --add app="Evernote" manage=off
 yabai -m rule --add app="DisplayLinkUserAgent" manage=off
 yabai -m rule --add app="Microsoft Teams" manage=off
+yabai -m rule --add app="WhatsApp" manage=off
+yabai -m rule --add app="Calculator" sticky=on layer=above manage=off
 
 
 # personal spaces

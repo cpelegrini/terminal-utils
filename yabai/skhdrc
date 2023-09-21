@@ -113,7 +113,7 @@
    # ctrl + alt + cmd - t : osascript -e 'tell application "Kitty" to make new document'
    # Open new Safari 
    ctrl + alt + cmd - s : osascript -e 'tell application "Safari" to make new document'
-   ctrl + alt + cmd - c : osascript -e 'tell application "Google Chrome" to open location "https://google.com"'
+   ctrl + alt + cmd - c : osascript -e 'tell application "Google Chrome" to make new window'
    ctrl + alt + cmd - k : osascript -e 'tell application "kitty" to open location "/"'
    ctrl + alt + cmd - f : osascript -e 'tell application "Finder" to open folder "Downloads" of home'
    ctrl + alt + cmd - p : osascript -e 'tell application "System Settings" to activate'

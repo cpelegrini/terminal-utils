@@ -97,15 +97,19 @@ if [[ "$TERM_PROGRAM" == "Hyper" ]]; then
 fi
 
 ### NNN
-# Colors
+export VISUAL=lvim # edit files with key "e"
 export NNN_FIFO=/tmp/nnn.fifo                # preview
 export NNN_TMPFILE='/tmp/.lastd'             # cd on exit
-export NNN_BMS="d:$HOME/Downloads;D:$HOME/Documents;p:/Volumes/ExtraData/Projects" # bookmarks
+# Bookmarks
+NNN_PROJECTS="/Volumes/ExtraData/Projects"
+NNN_VIALIZE="v:$NNN_PROJECTS/Vialize/_git/vialize"
+NNN_IGILE="i:$NNN_PROJECTS/Igile/_git"
+NNN_TERM_UTILS="t:$NNN_PROJECTS/CPelegrini/_git/terminal-utils"
+export NNN_BMS="d:$HOME/Downloads;p:$NNN_PROJECTS;$NNN_VIALIZE;$NNN_IGILE;$NNN_TERM_UTILS" # bookmarks
 # Plugins
-NNN_PLUG_PERSONAL='l:-!lvim "$nnn"*;m:! echo "$PWD/$nnn";g:-!lazygit*'
-NNN_PLUG_INLINE='e:!go run "$nnn"*'
-NNN_PLUG_DEFAULT='1:ipinfo;p:preview-tui;o:fzopen'
-NNN_PLUG="$NNN_PLUG_PERSONAL;$NNN_PLUG_DEFAULT;$NNN_PLUG_INLINE"
+NNN_PLUG_PERSONAL='g:-!lazygit*'
+NNN_PLUG_DEFAULT='1:ipinfo;f:!open .'
+NNN_PLUG="$NNN_PLUG_PERSONAL;$NNN_PLUG_DEFAULT;"
 export NNN_PLUG
 # Colors
 BLK="0B" CHR="0B" DIR="69" EXE="06" REG="00" 

@@ -98,22 +98,25 @@ fi
 
 ### NNN
 export VISUAL=lvim # edit files with key "e"
+export EDITOR=lvim # default editor inside nnn
 export NNN_FIFO=/tmp/nnn.fifo                # preview
 export NNN_TMPFILE='/tmp/.lastd'             # cd on exit
 # Bookmarks
+NNN_CURRENT="1:~/OneDrive/Trabalho/Iben/Vialize"
 NNN_PROJECTS="/Volumes/ExtraData/Projects"
+NNN_ONEDRIVE="~/OneDrive"
 NNN_VIALIZE="v:$NNN_PROJECTS/Vialize/_git/vialize"
 NNN_IGILE="i:$NNN_PROJECTS/Igile/_git"
 NNN_TERM_UTILS="t:$NNN_PROJECTS/CPelegrini/_git/terminal-utils"
-export NNN_BMS="d:$HOME/Downloads;p:$NNN_PROJECTS;$NNN_VIALIZE;$NNN_IGILE;$NNN_TERM_UTILS" # bookmarks
+export NNN_BMS="$NNN_CURRENT;d:$HOME/Downloads;o:$NNN_ONEDRIVE;p:$NNN_PROJECTS;$NNN_VIALIZE;$NNN_IGILE;$NNN_TERM_UTILS" # bookmarks
 # Plugins
 NNN_PLUG_PERSONAL='g:-!lazygit*'
 NNN_PLUG_DEFAULT='1:ipinfo;f:!open .'
 NNN_PLUG="$NNN_PLUG_PERSONAL;$NNN_PLUG_DEFAULT;"
 export NNN_PLUG
 # Colors
-BLK="0B" CHR="0B" DIR="69" EXE="06" REG="00" 
-HARDLINK="06" SYMLINK="08" MISSING="00" 
+BLK="0B" CHR="0B" DIR="4c" EXE="06" REG="00" 
+HARDLINK="06" SYMLINK="21" MISSING="00" 
 ORPHAN="09" FIFO="06" SOCK="0B" OTHER="06"
 export NNN_FCOLORS="$BLK$CHR$DIR$EXE$REG$HARDLINK$SYMLINK$MISSING$ORPHAN$FIFO$SOCK$OTHER"
 export NNN_COLORS='#0a1b2c3d;1234' # (/'#0a1b2c3d'/'#0a1b2c3d;1234')
@@ -135,10 +138,13 @@ alias lock='shortcuts run "Ligar flight mode"; pmset displaysleepnow'
 # clear screen inside Tmux
 alias cls="clear; tmux clearhist"
 # Cli do One Password
-alias aws="op run --env-file=$HOME/.config/op/aws.env -- aws"
-alias n="nnn -Rd"
+# alias aws="op run --env-file=$HOME/.config/op/aws.env -- aws"
+source ~/.config/op/plugins.sh
+alias n="nnn"
 alias l="lvim"
+alias lg="lazygit"
 alias t="tmux attach || tmux"
+alias k="kubectl"
 
 ## Configuracaod de historico por tab
 unsetopt inc_append_history

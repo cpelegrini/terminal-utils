@@ -1,5 +1,5 @@
 # My Vim Keymaps
-
+ 
 [quickref](https://neovim.io/doc/user/quickref.html)
 [explorer](https://gist.github.com/danidiaz/37a69305e2ed3319bfff9631175c5d0f)
 
@@ -18,6 +18,7 @@ nvim -v                            show version
 C-w s | :sp                        splits horizontally
 C-w v | :vs                        splits vertically
 C-w q | :wq                        quit window
+C-w =                              resize all windows to equal size
 C-w r                              rotate windows
 C-w x                              swap windows
 C-w c | :close                     close window
@@ -31,6 +32,7 @@ C-w v | :vnew                      new vertical window
 C-^                                alternate to last buffer
 :buffers                           show buffer list
 :ls                                show buffer list
+<leader>bf                         show buffer list on Telescope (use dd to kill buffer)  
 :sp +10                            Split from line 10
 C-w T                              moves current window to new tabpage
 C-w gf                             goes to definition on new tabpage
@@ -44,10 +46,15 @@ C-w gf                             goes to definition on new tabpage
 ```
 ### Tab Pages
 ```sh
+Alt+j                              go to previous tab
+Alt+h                              got to next tab
+Alt+"+"                            new tab
+Alt+"-"                            close current tab
 :h tabpage                         help about tabpages
 :tabs                              list of tab pages
 :tab split                         opens current buffer in new tab page 
 :tab help tabpage                  opens command at new tab page
+:tabnew | r !ls                    create new tab and output ls command to there
 :tabnew (A-t)                      new tab
 :tabc (A-c)                        close current tab
 :tabo                              close all others tab
@@ -135,11 +142,16 @@ c/test                             Deletes until "test" word and insert mode
 ]m                                 jumps to next function beginning
 [M                                 jumps to previous function end
 ]M                                 jumps to next function end
+g_                                 jumps to last char of line
 ```
 ### Visual Mode
 ```sh
 gq                                 formats text with textwidth setting
 vg_                                selects until last char in line
+0vg_                               selects from 0 to last printable char of line
+^vg_                               selects from first char until last printable of line
+v0                                 selects until 0 position
+v_                                 selects until first char
 ```
 ### Command Mode
 ```sh
@@ -170,6 +182,7 @@ ds'                                deletes surround '
 dst                                deletes surround tag
 S'                                 surrounds selection by '
 S{                                 surrounds selection and indent content
+Sb                                 surrounds selection with braces "()"
 ```
 
 ### Tips
@@ -195,7 +208,7 @@ Leader D                           type definition
 Leader rs                          list of document symbols
 Leader ws                          list of workspace symbols
 K                                  hover documentation
-C-K (ins mode)hover documentation
+C-K                                (ins mode)hover documentation
 C-k                                signature help
 gD                                 goto declaration
 Leader wa                          add folder to workspace
@@ -226,6 +239,7 @@ Result: Numbered list
 ma                                 creates a mark with name "a"
 'a                                 jumps to mark "a"
 dma                                deletes mark "a"
+mZ                                 creates global marks (upper case) to use between buffers
 ```
 ### Folding
 ```sh

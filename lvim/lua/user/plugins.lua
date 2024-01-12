@@ -1,32 +1,38 @@
-table.insert(lvim.plugins, {
-   "nvim-lualine/lualine.nvim",
-   dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
-   config = function()
-      require("lvim.core.lualine").setup()
-   end,
-   lazy = false
-})
-table.insert(lvim.plugins, {
-   "zbirenbaum/copilot.lua",
-   cmd = "Copilot",
-   event = "InsertEnter",
-   config = function()
-      require("copilot").setup()
-      -- require("copilot").setup({
-      --    suggestion = { enabled = false },
-      --    panel = { enabled = false },
-      -- })
-   end,
+lvim.plugins = {
+   {
+      "zbirenbaum/copilot.lua",
+      cmd = "Copilot",
+      event = "InsertEnter",
+   },
+   {
+      "zbirenbaum/copilot-cmp",
+      after = { "copilot.lua" },
+      config = function()
+         require("copilot_cmp").setup()
+      end,
+   },
+   {
+      "tpope/vim-surround"
+   },
 }
-)
-table.insert(lvim.plugins, {
-   "zbirenbaum/copilot-cmp",
-   after = { "copilot.lua" },
-   config = function()
-      require("copilot_cmp").setup()
-   end
-})
+local ok, copilot = pcall(require, "copilot")
+if not ok then
+   return
+end
 
+copilot.setup {
+   suggestion = {
+      keymap = {
+         accept = "<c-l>",
+         next = "<c-j>",
+         prev = "<c-k>",
+         dismiss = "<c-h>",
+      },
+   },
+}
+
+local opts = { noremap = true, silent = true }
+vim.api.nvim_set_keymap("n", "<c-s>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
@@ -38,10 +44,6 @@ lvim.builtin.bufferline.active = false
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
-
--- lvim.builtin.treesitter.ignore_install = { "haskell" }
--- -- always installed on startup, useful for parsers without a strict filetype
--- lvim.builtin.treesitter.ensure_installed = { "ckmment", "markdown_inline", "regex" }
 
 -- TELESCOPE
 lvim.builtin.telescope.defaults.layout_strategy = "flex"
@@ -67,24 +69,6 @@ for key, _ in pairs(lvim.builtin.telescope.pickers) do
 end
 lvim.builtin.telescope.pickers.git_files.previewer = nil
 
-
--- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
-
--- --- disable automatic installation of servers
--- lvim.lsp.installer.setup.automatic_installation = false
-
--- ---configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
--- ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
--- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
--- local opts = {} -- check the lspconfig documentation for a list of all possible options
--- require("lvim.lsp.manager").setup("pyright", opts)
-
--- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
--- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
--- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
---   return server ~= "emmet_ls"
--- end, lvim.lsp.automatic_configuration.skipped_servers)
-
 -- you can set a custom on_attach function that will be used for all the language servers
 -- See <https://github.com/neovim/nvim-lspconfig#keybindings-and-completion>
 lvim.lsp.on_attach_callback = function(client, bufnr)
@@ -108,29 +92,7 @@ formatters.setup {
       filetypes = { "typescript", "typescriptreact" },
    },
 }
--- local linters = require "lvim.lsp.null-ls.linters"
--- linters.setup {
---   { command = "flake8", filetypes = { "python" } },
---   {
---     command = "shellcheck",
---     args = { "--severity", "warning" },
---   },
--- }
 
 -- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
-lvim.plugins = {
-    {
-      "tpope/vim-surround"
-    },
-}
 
--- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
---
-require 'lspconfig'.csharp_ls.setup {}
+-- require 'lspconfig'.csharp_ls.setup {}

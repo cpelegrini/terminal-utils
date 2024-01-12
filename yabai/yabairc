@@ -28,7 +28,7 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp   # bsp, float, stack
-yabai -m config top_padding                  30
+yabai -m config top_padding                  0
 yabai -m config bottom_padding               0
 yabai -m config left_padding                 0
 # NOTE: for OBS floating head
@@ -45,8 +45,8 @@ yabai -m rule --add app="^Activity Monitor$" sticky=on layer=above manage=off
 yabai -m rule --add app="^1Password$" sticky=on layer=above manage=off
 # yabai -m rule --add app="Evernote" manage=off
 yabai -m rule --add app="DisplayLinkUserAgent" manage=off
-yabai -m rule --add app="Microsoft Teams" manage=off
-yabai -m rule --add app="WhatsApp" manage=off
+# yabai -m rule --add app="Microsoft Teams" manage=off
+# yabai -m rule --add app="WhatsApp" manage=off
 yabai -m rule --add app="Calculator" sticky=on layer=above manage=off
 
 

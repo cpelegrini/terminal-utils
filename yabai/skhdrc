@@ -8,8 +8,7 @@
 ## YABAI
 
    # Yabai Services - start/stop
-   shift + alt + ctrl - q : brew services stop yabai
-   shift + alt + ctrl - s : brew services start yabai
+   shift + alt + ctrl - r : skhd --restart-service
   
    # FOCUS
    # window
@@ -74,9 +73,14 @@
    cmd + alt - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
    # FLOAT WINDOWS
+   # GRID: <rows>:<cols>:<start-x>:<start-y>:<width>:<height> where rows and cols are how many
+   # rows and columns there are in total, start-x and start-y are the start indices for 
+   # the row and column and width and height are how many rows and columns the window spans.
+   # <total-rows>:<total-cols>:<x>:<y>:<width>:<height>
    # cmd + \ -  float / unfloat window and center on screen
    cmd + alt - 0x2A : yabai -m window --toggle float;\
-                      yabai -m window --grid 1:5:1:1:3:1
+                      yabai -m window --toggle topmost;\
+                      yabai -m window --grid 20:26:1:1:24:18
    # cmd + [ - window to left half
    cmd + alt - 0x21 : yabai -m window --toggle float;\
                       yabai -m window --grid 1:4:0:0:2:1

@@ -44,6 +44,12 @@ C-w gf                             goes to definition on new tabpage
 :res 10 | +10                      resizes split
 :vert res 10 | +10                 resizes vertical split
 ```
+##### Scroll
+````sh
+:set scrollbind                    turn on scroll sync with another windows
+:set noscrollbind                  turn off scroll
+``````
+
 ### Tab Pages
 ```sh
 Alt+j                              go to previous tab

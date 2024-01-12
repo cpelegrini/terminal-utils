@@ -15,7 +15,7 @@ brew install tmux
 * Create symbolics links to tmux config file and dracula theme.
 * Current folder is *./tmux
 ```bash
-ln -s $(pwd)/tmux.conf ~/.tmux.conf
+ln -s $(pwd) ~/.config/tmux
 ln -s $(pwd)/dracula.tmuxtheme ~/dracula.tmuxtheme
 ```
 * [Color palette](https://i.stack.imgur.com/e63et.png)
@@ -25,10 +25,10 @@ ln -s $(pwd)/dracula.tmuxtheme ~/dracula.tmuxtheme
 * [tpm plugins manager](https://github.com/tmux-plugins/tpm)
 Resume:
 ```bash
-mkdir -p ~/.tmux/plugins
-cd ~/.tmux/plugins
+mkdir -p ~/.config/tmux/plugins
+cd ~/.config/tmux/plugins
 git clone https://github.com/tmux-plugins/tpm
-tmux source ~/.tmux.conf
+tmux source ~/.config/tmux/tmux.conf
 ~/.tmux/plugins/tpm/bin/install_plugins
 ```
 

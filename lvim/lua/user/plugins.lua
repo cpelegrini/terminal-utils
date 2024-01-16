@@ -14,6 +14,8 @@ lvim.plugins = {
    {
       "tpope/vim-surround"
    },
+   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+   { 'projekt0n/github-nvim-theme' }
 }
 local ok, copilot = pcall(require, "copilot")
 if not ok then

@@ -1,5 +1,7 @@
 -- THEME / COLORS SETTINGS
-lvim.colorscheme = "lunar"
+lvim.transparent_window = true
+lvim.colorscheme = "github_dark_dimmed"
+-- lvim.colorscheme = "lunar"
 -- lvim.colorscheme = "darkblue"
 -- lvim.transparent_window = true
 --

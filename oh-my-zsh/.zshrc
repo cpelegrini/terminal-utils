@@ -1,15 +1,10 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="spaceship"
-
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -31,7 +26,9 @@ plugins=(
    history
 )
 
+export ZSH_THEME="apple"
 source $ZSH/oh-my-zsh.sh
+
 
 #
 # Example aliases
@@ -72,30 +69,6 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-completions
 zinit light buonomo/yarn-completion
 
-SPACESHIP_PROMPT_ORDER=(
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  exec_time     # Execution time
-  line_sep      # Line break
-  vi_mode       # Vi-mode indicator
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="❯"
-SPACESHIP_CHAR_SUFFIX=" "
-# Simplify prompt if we're using Hyper
-if [[ "$TERM_PROGRAM" == "Hyper" ]]; then
-  SPACESHIP_PROMPT_SEPARATE_LINE=false
-  SPACESHIP_DIR_SHOW=false
-  SPACESHIP_GIT_BRANCH_SHOW=false
-fi
-
 ### NNN
 export VISUAL=lvim # edit files with key "e"
 export EDITOR=lvim # default editor inside nnn
@@ -123,7 +96,6 @@ export NNN_COLORS='#0a1b2c3d;1234' # (/'#0a1b2c3d'/'#0a1b2c3d;1234')
 
 function nnn () {
     command nnn "$@"
-
     if [ -f "$NNN_TMPFILE" ]; then
             . "$NNN_TMPFILE"
     fi
@@ -131,6 +103,17 @@ function nnn () {
 
 # Kitty
 export TERM=xterm-256color
+
+# Tmuxifier
+# export TMUXIFIER_LAYOUT_PATH="$HOME/.config/tmux/tmuxifier-layouts"
+# eval "$(tmuxifier init -)"
+# PATH=$PATH:$HOME/.config/tmux/plugins/tmuxifier/bin
+
+# Python3 as default (pip)
+export PATH="/usr/local/bin:$PATH"
+alias python='python3'
+alias pip='pip3'
+
 
 ### ALIASES
 # lock screen and turn off bluetooth and wifi
@@ -141,23 +124,9 @@ alias cls="clear; tmux clearhist"
 # alias aws="op run --env-file=$HOME/.config/op/aws.env -- aws"
 source ~/.config/op/plugins.sh
 alias n="nnn"
-alias l="lvim"
+alias l="lvim +LvimReload"
 alias lg="lazygit"
 alias t="tmux attach || tmux"
+#alias tf="tmuxifier"
 alias k="kubectl"
-
-## Configuracaod de historico por tab
-unsetopt inc_append_history
-unsetopt share_history
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="$HOME/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+alias sy="yabai --stop-service ; sudo yabai --load-sa ; yabai --start-service ; skhd --restart-service"

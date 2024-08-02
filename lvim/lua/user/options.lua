@@ -13,12 +13,12 @@ vim.opt.textwidth = 100
 vim.opt.colorcolumn = '100'
 vim.opt.cursorcolumn = false
 vim.opt.clipboard = "" -- separate vim clipboard from OS clipboard
+vim.opt.showcmd = true -- shows commands typing at right side of command line
 
 -- FOLD
 vim.opt.foldenable = true
 vim.opt.foldmethod = 'indent'
 vim.opt.foldlevel = 99
-
 
 -- Netrw / Explore
 -- vim.cmd [[
@@ -41,3 +41,5 @@ lvim.format_on_save = true
 -- }
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
+
+

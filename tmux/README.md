@@ -22,14 +22,8 @@ ln -s $(pwd)/dracula.tmuxtheme ~/dracula.tmuxtheme
 
 ## Install plugins
 
-* [tpm plugins manager](https://github.com/tmux-plugins/tpm)
-Resume:
-```bash
-mkdir -p ~/.config/tmux/plugins
-cd ~/.config/tmux/plugins
-git clone https://github.com/tmux-plugins/tpm
-tmux source ~/.config/tmux/tmux.conf
-~/.tmux/plugins/tpm/bin/install_plugins
-```
+To install plugins, type: <tmux prefix>I
 
-
+### Tmuxifier
+Instalation guide:
+[link](https://github.com/jimeh/tmuxifier) 

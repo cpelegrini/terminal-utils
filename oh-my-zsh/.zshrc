@@ -111,8 +111,8 @@ export TERM=xterm-256color
 
 # Python3 as default (pip)
 export PATH="/usr/local/bin:$PATH"
-alias python='python3'
-alias pip='pip3'
+alias python='python3.9'
+alias pip='pip3.9'
 
 
 ### ALIASES
@@ -122,7 +122,7 @@ alias lock='shortcuts run "Ligar flight mode"; pmset displaysleepnow'
 alias cls="clear; tmux clearhist"
 # Cli do One Password
 # alias aws="op run --env-file=$HOME/.config/op/aws.env -- aws"
-source ~/.config/op/plugins.sh
+# source ~/.config/op/plugins.sh
 alias n="nnn"
 alias l="lvim +LvimReload"
 alias lg="lazygit"
@@ -130,3 +130,5 @@ alias t="tmux attach || tmux"
 #alias tf="tmuxifier"
 alias k="kubectl"
 alias sy="yabai --stop-service ; sudo yabai --load-sa ; yabai --start-service ; skhd --restart-service"
+alias rotate_clockwise="~/.config/skhd/cycle_clockwise.sh"
+alias rotate_counterclockwise="~/.config/skhd/cycle_counterclockwise.sh"

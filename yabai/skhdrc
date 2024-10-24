@@ -56,9 +56,13 @@
    ctrl + shift - 7 : yabai -m window --space 7; yabai -m space --focus 7
    ctrl + shift - 8 : yabai -m window --space 8; yabai -m space --focus 8
    ctrl + shift - 9 : yabai -m window --space 9; yabai -m space --focus 9
+
    # rotate tree
    ctrl + shift - r : yabai -m space --rotate 90
    ctrl + shift - t : yabai -m space --rotate 270
+   ctrl + alt - r : /Volumes/ExtraData/Projects/CPelegrini/_git/terminal-utils/yabai/cycle_clockwise.sh
+   ctrl + alt - t : /Volumes/ExtraData/Projects/CPelegrini/_git/terminal-utils/yabai/cycle_counterclockwise.sh
+
    # toggle window fullscreen zoom
    ctrl + shift - f : yabai -m window --toggle zoom-fullscreen
    # toggle window pip
@@ -73,7 +77,8 @@
    # \ -  float / unfloat window and center on screen
    ctrl + shift - 0x2A : yabai -m window --toggle float;\
                       yabai -m window --toggle topmost;\
-                      yabai -m window --grid 20:26:1:1:24:18
+                      yabai -m window --grid 10:20:3:1:14:7
+                      # yabai -m window --grid 20:26:1:1:24:18
    # cmd + [ - window to left half
    ctrl + shift + alt - 0x21 : yabai -m window --toggle float;\
                       yabai -m window --grid 1:4:0:0:2:1

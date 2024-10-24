@@ -12,6 +12,8 @@
    ```bash
       mkdir -p ~/.config/skhd
       ln -s $(pwd)/skhdrc ~/.config/skhd/skhdrc
+      ln -s $(pwd)/cycle_clockwise.sh ~/.config/skhd/cycle_clockwise.sh
+      ln -s $(pwd)/cycle_counterclockwise.sh ~/.config/skhd/cycle_counterclockwise.sh
    ```
 
 ## Yabai log
